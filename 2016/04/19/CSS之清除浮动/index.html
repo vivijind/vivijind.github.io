@@ -80,15 +80,25 @@
 
 
 
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="vivijind">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="导读学习CSS有一小段时间了，在练习的时候经常碰到布局问题，特别是和浮动有关的。才考虑用浮动做布局时，常常碰到一些”不受控制”的问题，让布局的效果往往不在意料之内，这个时候需要清除浮动来解决问题。那么，什么是浮动呢？我们为什么需要清除浮动？怎么清除浮动？这里，试着把学习到的总结一下，让自己对浮动有一个较为系统话的理解。
+什么是浮动？浮动（float）是一种可视化格式，在CSS中经常被用到，通过它我">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS之清除浮动">
+<meta property="og:url" content="http://yoursite.com/2016/04/19/CSS之清除浮动/index.html">
 <meta property="og:site_name" content="vivijind">
-<meta property="og:description">
+<meta property="og:description" content="导读学习CSS有一小段时间了，在练习的时候经常碰到布局问题，特别是和浮动有关的。才考虑用浮动做布局时，常常碰到一些”不受控制”的问题，让布局的效果往往不在意料之内，这个时候需要清除浮动来解决问题。那么，什么是浮动呢？我们为什么需要清除浮动？怎么清除浮动？这里，试着把学习到的总结一下，让自己对浮动有一个较为系统话的理解。
+什么是浮动？浮动（float）是一种可视化格式，在CSS中经常被用到，通过它我">
+<meta property="og:image" content="http://yoursite.com/../../../../images/float.png">
+<meta property="og:image" content="http://yoursite.com/../../../../images/float-demo.jpg">
+<meta property="og:image" content="http://yoursite.com/../../../../images/float_obscure.jpg">
+<meta property="og:image" content="http://yoursite.com/../../../../images/clear_self.png">
+<meta property="og:image" content="http://yoursite.com/../../../../images/solution1.png">
+<meta property="og:updated_time" content="2016-04-19T14:44:38.994Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vivijind">
-<meta name="twitter:description">
+<meta name="twitter:title" content="CSS之清除浮动">
+<meta name="twitter:description" content="导读学习CSS有一小段时间了，在练习的时候经常碰到布局问题，特别是和浮动有关的。才考虑用浮动做布局时，常常碰到一些”不受控制”的问题，让布局的效果往往不在意料之内，这个时候需要清除浮动来解决问题。那么，什么是浮动呢？我们为什么需要清除浮动？怎么清除浮动？这里，试着把学习到的总结一下，让自己对浮动有一个较为系统话的理解。
+什么是浮动？浮动（float）是一种可视化格式，在CSS中经常被用到，通过它我">
+<meta name="twitter:image" content="http://yoursite.com/../../../../images/float.png">
 
 
 
@@ -106,7 +116,7 @@
   };
 </script>
 
-  <title> vivijind </title>
+  <title> CSS之清除浮动 | vivijind </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -127,9 +137,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -216,9 +224,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -238,10 +246,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/04/19/CSS之清除浮动/" itemprop="url">
-                  CSS之清除浮动
-                </a>
+                CSS之清除浮动
               
             
           </h1>
@@ -281,9 +286,7 @@
       
 
       
-        
-          
-            <h1 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h1><p>学习CSS有一小段时间了，在练习的时候经常碰到布局问题，特别是和浮动有关的。才考虑用浮动做布局时，常常碰到一些”不受控制”的问题，让布局的效果往往不在意料之内，这个时候需要<strong>清除浮动</strong>来解决问题。那么，<strong>什么是浮动呢？我们为什么需要清除浮动？怎么清除浮动？</strong>这里，试着把学习到的总结一下，让自己对浮动有一个较为系统话的理解。</p>
+        <h1 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h1><p>学习CSS有一小段时间了，在练习的时候经常碰到布局问题，特别是和浮动有关的。才考虑用浮动做布局时，常常碰到一些”不受控制”的问题，让布局的效果往往不在意料之内，这个时候需要<strong>清除浮动</strong>来解决问题。那么，<strong>什么是浮动呢？我们为什么需要清除浮动？怎么清除浮动？</strong>这里，试着把学习到的总结一下，让自己对浮动有一个较为系统话的理解。</p>
 <h1 id="什么是浮动？"><a href="#什么是浮动？" class="headerlink" title="什么是浮动？"></a>什么是浮动？</h1><p>浮动（float）是一种可视化格式，在CSS中经常被用到，通过它我们可以很方便地布局。和布局相关的比较常用的应用有两列布局、两列自适应布局、文档环绕等。<br>在<a href="http://www.w3school.com.cn/css/css_positioning_floating.asp" target="_blank" rel="external">w3school中对浮动的描述</a>如下：</p>
 <blockquote>
 <hr>
@@ -403,16 +406,18 @@ both  :  不允许有浮动对象&apos;
 <h3 id="原理上阐述产生浮动的原因"><a href="#原理上阐述产生浮动的原因" class="headerlink" title="原理上阐述产生浮动的原因"></a>原理上阐述产生浮动的原因</h3><p>float等元素会触发BFC（<a href="https://www.w3.org/TR/CSS21/visuren.html#block-formatting）" target="_blank" rel="external">Block formatting contexts （块级格式化上下文）</a>）。<br>BFC从通俗上说就是一个单独的盒子，里面的子元素不会影响外面元素的布局，同时还存在于普通文本流中。<br>关于BFC如何触发及其特性的讲解可以看这篇文章————<a href="http://www.iyunlu.com/view/css-xhtml/55.html" target="_blank" rel="external">那些年我们一起清除过的浮动</a></p>
 <h1 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h1><p><a href="http://www.w3school.com.cn/css/css_positioning_floating.asp" target="_blank" rel="external">W3school上关于float的相关知识</a><br><a href="http://www.iyunlu.com/view/css-xhtml/55.html" target="_blank" rel="external">那些年我们一起清除过的浮动</a><br><a href="http://my.oschina.net/leipeng/blog/221125?fromerr=reoGyhha" target="_blank" rel="external">css清除浮动float的三种方法总结</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing" target="_blank" rel="external">MDN上关于CSS Margin Collpase的阐述</a><br><a href="https://www.w3.org/TR/CSS2/visuren.html#block-formatting" target="_blank" rel="external">W3C标准</a><br><a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank" rel="external">由Nicolas Gallagher大师提出来的新方法：A new micro clearfix hack</a></p>
 
-          
-        
       
     </div>
     
     <div>
       
+        
+      
     </div>
 
     <div>
+      
+        
       
     </div>
 
@@ -420,215 +425,32 @@ both  :  不允许有浮动对象&apos;
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/04/17/windows下pure安装/" rel="next" title="windows下puer安装">
+                <i class="fa fa-chevron-left"></i> windows下puer安装
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/04/17/windows下pure安装/" itemprop="url">
-                  windows下puer安装
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-17T11:48:10+08:00" content="2016-04-17">
-              2016-04-17
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>###我的第一篇博客<br>这是我用markdown写的第一篇博客<br>Today is 2016.4.17<br>hexo搭建使用的第一个主题为next，风格是：Pisces - 双栏 Scheme，小家碧玉似的清新</p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/17/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-17T10:12:42+08:00" content="2016-04-17">
-              2016-04-17
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
@@ -636,6 +458,10 @@ both  :  不允许有浮动对象&apos;
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -655,8 +481,17 @@ both  :  不允许有浮动对象&apos;
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/default_avatar.jpg"
@@ -699,6 +534,17 @@ both  :  不允许有浮动对象&apos;
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#导读"><span class="nav-number">1.</span> <span class="nav-text">导读</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是浮动？"><span class="nav-number">2.</span> <span class="nav-text">什么是浮动？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么要清除浮动？"><span class="nav-number">3.</span> <span class="nav-text">为什么要清除浮动？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#怎么清除浮动？"><span class="nav-number">4.</span> <span class="nav-text">怎么清除浮动？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法一："><span class="nav-number">4.1.</span> <span class="nav-text">方法一：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法二"><span class="nav-number">4.2.</span> <span class="nav-text">方法二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法三"><span class="nav-number">4.3.</span> <span class="nav-text">方法三</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法四（较常用）"><span class="nav-number">4.4.</span> <span class="nav-text">方法四（较常用）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法五"><span class="nav-number">4.5.</span> <span class="nav-text">方法五</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">4.6.</span> <span class="nav-text">补充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#伪元素-before和-after在清除时的区别："><span class="nav-number">4.6.1.</span> <span class="nav-text">伪元素:before和:after在清除时的区别：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原理上阐述产生浮动的原因"><span class="nav-number">4.6.2.</span> <span class="nav-text">原理上阐述产生浮动的原因</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料："><span class="nav-number">5.</span> <span class="nav-text">参考资料：</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -795,6 +641,10 @@ both  :  不允许有浮动对象&apos;
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
