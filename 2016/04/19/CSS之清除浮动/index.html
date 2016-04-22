@@ -80,24 +80,21 @@
 
 
 
-<meta name="description" content="导读学习CSS有一小段时间了，在练习的时候经常碰到布局问题，特别是和浮动有关的。才考虑用浮动做布局时，常常碰到一些”不受控制”的问题，让布局的效果往往不在意料之内，这个时候需要清除浮动来解决问题。那么，什么是浮动呢？我们为什么需要清除浮动？怎么清除浮动？这里，试着把学习到的总结一下，让自己对浮动有一个较为系统话的理解。
-什么是浮动？浮动（float）是一种可视化格式，在CSS中经常被用到，通过它我">
+<meta name="description" content="导读学习CSS有一小段时间了，在练习的时候经常碰到布局问题，特别是和浮动有关的。才考虑用浮动做布局时，常常碰到一些”不受控制”的问题，让布局的效果往往不在意料之内，这个时候需要清除浮动来解决问题。那么，什么是浮动呢？我们为什么需要清除浮动？怎么清除浮动？这里，试着把学习到的总结一下，让自己对浮动有一个较为系统话的理解。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS之清除浮动">
 <meta property="og:url" content="http://yoursite.com/2016/04/19/CSS之清除浮动/index.html">
 <meta property="og:site_name" content="vivijind">
-<meta property="og:description" content="导读学习CSS有一小段时间了，在练习的时候经常碰到布局问题，特别是和浮动有关的。才考虑用浮动做布局时，常常碰到一些”不受控制”的问题，让布局的效果往往不在意料之内，这个时候需要清除浮动来解决问题。那么，什么是浮动呢？我们为什么需要清除浮动？怎么清除浮动？这里，试着把学习到的总结一下，让自己对浮动有一个较为系统话的理解。
-什么是浮动？浮动（float）是一种可视化格式，在CSS中经常被用到，通过它我">
+<meta property="og:description" content="导读学习CSS有一小段时间了，在练习的时候经常碰到布局问题，特别是和浮动有关的。才考虑用浮动做布局时，常常碰到一些”不受控制”的问题，让布局的效果往往不在意料之内，这个时候需要清除浮动来解决问题。那么，什么是浮动呢？我们为什么需要清除浮动？怎么清除浮动？这里，试着把学习到的总结一下，让自己对浮动有一个较为系统话的理解。">
 <meta property="og:image" content="http://yoursite.com/../../../../images/float.png">
 <meta property="og:image" content="http://yoursite.com/../../../../images/float-demo.jpg">
 <meta property="og:image" content="http://yoursite.com/../../../../images/float_obscure.jpg">
 <meta property="og:image" content="http://yoursite.com/../../../../images/clear_self.png">
 <meta property="og:image" content="http://yoursite.com/../../../../images/solution1.png">
-<meta property="og:updated_time" content="2016-04-19T15:10:01.363Z">
+<meta property="og:updated_time" content="2016-04-22T13:24:58.130Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS之清除浮动">
-<meta name="twitter:description" content="导读学习CSS有一小段时间了，在练习的时候经常碰到布局问题，特别是和浮动有关的。才考虑用浮动做布局时，常常碰到一些”不受控制”的问题，让布局的效果往往不在意料之内，这个时候需要清除浮动来解决问题。那么，什么是浮动呢？我们为什么需要清除浮动？怎么清除浮动？这里，试着把学习到的总结一下，让自己对浮动有一个较为系统话的理解。
-什么是浮动？浮动（float）是一种可视化格式，在CSS中经常被用到，通过它我">
+<meta name="twitter:description" content="导读学习CSS有一小段时间了，在练习的时候经常碰到布局问题，特别是和浮动有关的。才考虑用浮动做布局时，常常碰到一些”不受控制”的问题，让布局的效果往往不在意料之内，这个时候需要清除浮动来解决问题。那么，什么是浮动呢？我们为什么需要清除浮动？怎么清除浮动？这里，试着把学习到的总结一下，让自己对浮动有一个较为系统话的理解。">
 <meta name="twitter:image" content="http://yoursite.com/../../../../images/float.png">
 
 
@@ -280,6 +277,15 @@
 
           
           
+             <span id="/2016/04/19/CSS之清除浮动/" class="leancloud_visitors" data-flag-title="CSS之清除浮动">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
 
           
         </div>
@@ -293,7 +299,7 @@
       
 
       
-        <h2 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h2><p>学习CSS有一小段时间了，在练习的时候经常碰到布局问题，特别是和浮动有关的。才考虑用浮动做布局时，常常碰到一些”不受控制”的问题，让布局的效果往往不在意料之内，这个时候需要<strong>清除浮动</strong>来解决问题。那么，<strong>什么是浮动呢？我们为什么需要清除浮动？怎么清除浮动？</strong>这里，试着把学习到的总结一下，让自己对浮动有一个较为系统话的理解。</p>
+        <h2 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h2><p>学习CSS有一小段时间了，在练习的时候经常碰到布局问题，特别是和浮动有关的。才考虑用浮动做布局时，常常碰到一些”不受控制”的问题，让布局的效果往往不在意料之内，这个时候需要<strong>清除浮动</strong>来解决问题。那么，<strong>什么是浮动呢？我们为什么需要清除浮动？怎么清除浮动？</strong>这里，试着把学习到的总结一下，让自己对浮动有一个较为系统话的理解。<br><a id="more"></a></p>
 <h2 id="什么是浮动？"><a href="#什么是浮动？" class="headerlink" title="什么是浮动？"></a>什么是浮动？</h2><p>浮动（float）是一种可视化格式，在CSS中经常被用到，通过它我们可以很方便地布局。和布局相关的比较常用的应用有两列布局、两列自适应布局、文档环绕等。<br>在<a href="http://www.w3school.com.cn/css/css_positioning_floating.asp" target="_blank" rel="external">w3school中对浮动的描述</a>如下：</p>
 <blockquote>
 <hr>
@@ -539,6 +545,17 @@ both  :  不允许有浮动对象&apos;
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/vivijind" target="_blank" title="github">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+          
         </div>
 
         
@@ -700,6 +717,99 @@ both  :  不允许有浮动对象&apos;
   
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("9SRis8xjurTM1rP8EufRzNH5-gzGzoHsz", "DUFsVoj94qARnbYTTdPC59pr");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 

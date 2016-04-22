@@ -88,7 +88,7 @@ windows下puer安装方法简介安装node.js首先，去node.js官网下载node
 <meta property="og:site_name" content="vivijind">
 <meta property="og:description" content="puer简介Puer是一个可以实时编辑刷新的前端服务器。具体可以看puer
 windows下puer安装方法简介安装node.js首先，去node.js官网下载node.js并安装，根据你自己的机型下载对应版本，然后一直点下一步默认安装。其中，node.js具有两个版本，LTS和Stable，其中LTS版本比较稳定安全，Stable版本迭代更新比较快。具体可以看下这篇文章中英文解释（ps，中文翻译">
-<meta property="og:updated_time" content="2016-04-19T15:10:15.329Z">
+<meta property="og:updated_time" content="2016-04-22T13:25:23.871Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="windows下puer安装">
 <meta name="twitter:description" content="puer简介Puer是一个可以实时编辑刷新的前端服务器。具体可以看puer
@@ -274,6 +274,15 @@ windows下puer安装方法简介安装node.js首先，去node.js官网下载node
 
           
           
+             <span id="/2016/04/17/windows下pure安装/" class="leancloud_visitors" data-flag-title="windows下puer安装">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
 
           
         </div>
@@ -289,6 +298,7 @@ windows下puer安装方法简介安装node.js首先，去node.js官网下载node
       
         <h2 id="puer简介"><a href="#puer简介" class="headerlink" title="puer简介"></a>puer简介</h2><p>Puer是一个可以实时编辑刷新的前端服务器。具体可以看<a href="https://github.com/leeluolee/puer" target="_blank" rel="external">puer</a></p>
 <h2 id="windows下puer安装方法简介"><a href="#windows下puer安装方法简介" class="headerlink" title="windows下puer安装方法简介"></a>windows下puer安装方法简介</h2><h3 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h3><p>首先，去<a href="https://nodejs.org/en/" target="_blank" rel="external">node.js官网</a>下载node.js并安装，根据你自己的机型下载对应版本，然后一直点下一步默认安装。<br>其中，node.js具有两个版本，LTS和Stable，其中LTS版本比较稳定安全，Stable版本迭代更新比较快。具体可以看下这篇文章中英文解释（ps，中文翻译一般）————<a href="http://www.zhoulujun.cn/zhoulujun/html/webfront/ECMAScript/nodejs/7745.html" target="_blank" rel="external">nodejs v4.4.2 LTS和 v5.10.1 Stable 有什么区别？</a></p>
+<a id="more"></a>
 <h3 id="安装puer"><a href="#安装puer" class="headerlink" title="安装puer"></a>安装puer</h3><p>node.js安装好后，打开Node.js command prompt，使用全局命令安装puer：</p>
 <pre><code>npm install puer -g
 </code></pre><p>执行完后，puer就安装好了，具体的使用方法可以输入puer-h查看help。</p>
@@ -430,6 +440,17 @@ puer
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/vivijind" target="_blank" title="github">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
           
         </div>
 
@@ -592,6 +613,99 @@ puer
   
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("9SRis8xjurTM1rP8EufRzNH5-gzGzoHsz", "DUFsVoj94qARnbYTTdPC59pr");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 

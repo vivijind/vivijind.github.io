@@ -275,6 +275,15 @@
 
           
           
+             <span id="/2016/04/22/精通CSS-阅读总结/" class="leancloud_visitors" data-flag-title="精通CSS_阅读总结">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
 
           
         </div>
@@ -289,54 +298,12 @@
 
       
         
-          
-            <h2 id="《精通CSS（第2版）》"><a href="#《精通CSS（第2版）》" class="headerlink" title="《精通CSS（第2版）》"></a>《精通CSS（第2版）》</h2><p>今天把精通CSS书阅读完了，总的来说，这是一本还不错的书，对于HTML和CSS入门还是挺不错的。看网上很多人说翻译的不好，整个看下来很多术语确实和平时使用的不怎么一样，可能由于书也比较老了，但是不影响阅读。</p>
-<h2 id="阅读笔记"><a href="#阅读笔记" class="headerlink" title="阅读笔记"></a>阅读笔记</h2><p>整个书的具体内容待整理。</p>
-<h2 id="Point"><a href="#Point" class="headerlink" title="Point"></a>Point</h2><p>书的最后介绍了一些实例，用的技术有几个比较陈旧，改版之后的版本有增加CSS3的支持，这个还是不错的。<br>虽然用的标准不是CSS3或者HTML5，但是在书中都有提及到这方面的知识，改版后的也是与时俱进了。<br>看完书自己学习到了几个写CSS中需要注意的点，整理下：</p>
-<h3 id="构建CSS布局的流程"><a href="#构建CSS布局的流程" class="headerlink" title="构建CSS布局的流程"></a>构建CSS布局的流程</h3><p>要想创建可伸缩且容易维护的CSS系统，首先应该检查设计，寻找重复的模式，这包括页面结构中元素反复出现的方式。</p>
-<p>大致流程如下：</p>
-<ol>
-<li>先把页面划分为大的结构性区域，比如容器、页眉、内容区域和页脚</li>
-<li>内容区域本身，开始建立网格结构</li>
-<li>在各个内容区域中寻找不同的布局结构</li>
-<li>关注不同类型的内容</li>
-<li>查看每个内容块的结构，看看不同的类型中是否有共同的模式</li>
-<li>找出模式并确定命名约定后，马上开始定义将使用的元素</li>
-</ol>
-<h3 id="让设计居中的方法"><a href="#让设计居中的方法" class="headerlink" title="让设计居中的方法"></a>让设计居中的方法</h3><ul>
-<li>margin: 0 auto (水平居中)</li>
-<li>设置line-height （垂直居中）</li>
-<li>IE5.x和6中不支持margin：auto，但是它将text-align:center认为让所有东西居中，不只是文本。</li>
-</ul>
-<h3 id="宽屏窄屏布局"><a href="#宽屏窄屏布局" class="headerlink" title="宽屏窄屏布局"></a>宽屏窄屏布局</h3><ul>
-<li>为适应宽屏窄屏，通常将宽度设置为主题的百分之几，或者使用em相对于文本字号设置宽度</li>
-<li>固定宽度的布局<ul>
-<li>常采用浮动</li>
-<li>不适应宽窄屏</li>
-</ul>
-</li>
-</ul>
-<h3 id="流式布局"><a href="#流式布局" class="headerlink" title="流式布局"></a>流式布局</h3><ul>
-<li>尺寸用百分数设置</li>
-<li>添加min-width和max-width设置自适应的大小限制</li>
-</ul>
-<h3 id="弹性布局"><a href="#弹性布局" class="headerlink" title="弹性布局"></a>弹性布局</h3><ul>
-<li>相对于字号来设置元素的宽度，以em为单位设置宽度，可以确保在字号增加时，整个布局随之扩大。</li>
-<li>大多数浏览器上的默认字号是16像素，10像素大约是16像素的62.5%，所以在主题上将字号设置为62.5%就可以，这样让1em相当于10像素</li>
-<li>内部宽度仍然使用百分数，只以em为单位设置容器的宽度</li>
-</ul>
-<h3 id="图像处理"><a href="#图像处理" class="headerlink" title="图像处理"></a>图像处理</h3><ul>
-<li>对于需要跨越大区域的图像，比如站点页眉或品牌区域中的图像，可以考虑使用背景图像而不是图像元素。</li>
-<li>对于常规内容的图像，希望他们垂直和水平伸缩以避免被剪切。可以将图像元素添加到没有设置任何尺寸的页面上。然后设置图像的百分数宽度，并且添加与图像宽度相同的max-width以避免图像失真。</li>
-</ul>
-<h3 id="选择器优先级（特殊性）"><a href="#选择器优先级（特殊性）" class="headerlink" title="选择器优先级（特殊性）"></a>选择器优先级（特殊性）</h3><ul>
-<li>不要随便添加更特殊的选择器，因为这可能会给代码的其他部分带来特殊性问题。更好的方法往往是删除额外的选择器，让他们尽可能一般化，只在需要细粒度的控制时添加更特殊的选择器。</li>
-</ul>
-<h3 id="bug查看方法"><a href="#bug查看方法" class="headerlink" title="bug查看方法"></a>bug查看方法</h3><ul>
-<li>隔离问题：在相关的元素上应用边框或轮廓，看看他们的反应。</li>
-</ul>
-
-          
+          <h2 id="《精通CSS（第2版）》"><a href="#《精通CSS（第2版）》" class="headerlink" title="《精通CSS（第2版）》"></a>《精通CSS（第2版）》</h2><p>今天把精通CSS书阅读完了，总的来说，这是一本还不错的书，对于HTML和CSS入门还是挺不错的。看网上很多人说翻译的不好，整个看下来很多术语确实和平时使用的不怎么一样，可能由于书也比较老了，但是不影响阅读。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/22/精通CSS-阅读总结/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -420,6 +387,15 @@
 
           
           
+             <span id="/2016/04/19/CSS之清除浮动/" class="leancloud_visitors" data-flag-title="CSS之清除浮动">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
 
           
         </div>
@@ -434,128 +410,12 @@
 
       
         
-          
-            <h2 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h2><p>学习CSS有一小段时间了，在练习的时候经常碰到布局问题，特别是和浮动有关的。才考虑用浮动做布局时，常常碰到一些”不受控制”的问题，让布局的效果往往不在意料之内，这个时候需要<strong>清除浮动</strong>来解决问题。那么，<strong>什么是浮动呢？我们为什么需要清除浮动？怎么清除浮动？</strong>这里，试着把学习到的总结一下，让自己对浮动有一个较为系统话的理解。</p>
-<h2 id="什么是浮动？"><a href="#什么是浮动？" class="headerlink" title="什么是浮动？"></a>什么是浮动？</h2><p>浮动（float）是一种可视化格式，在CSS中经常被用到，通过它我们可以很方便地布局。和布局相关的比较常用的应用有两列布局、两列自适应布局、文档环绕等。<br>在<a href="http://www.w3school.com.cn/css/css_positioning_floating.asp" target="_blank" rel="external">w3school中对浮动的描述</a>如下：</p>
-<blockquote>
-<hr>
-<p>浮动的框可以向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。<br>由于浮动框不在文档的普通流中，所以文档的普通流中的块框表现得就像浮动框不存在一样。</p>
-<hr>
-<center><img src="../../../../images/float.png" alt="float简介"></center>
-
-</blockquote>
-<h2 id="为什么要清除浮动？"><a href="#为什么要清除浮动？" class="headerlink" title="为什么要清除浮动？"></a>为什么要清除浮动？</h2><p>浮动会让元素<a href="https://www.zhihu.com/question/24529373/answer/29135021" target="_blank" rel="external">脱离文档流</a>，不再影响不浮动的元素。实际上，它不是完全的脱离文档流，而是半脱离文档流（对元素，脱离文档流；对内容，在文档流），什么意思呢？见下图：</p>
-<center><img src="../../../../images/float-demo.jpg" alt="float-demo"></center>
-
-<p>图中对于文字内容，并没有脱离文档流，float仅仅是对元素有影响。也就是说，如果浮动的元素后面有一个文档流中的元素，那么这个元素的框会表现的像浮动根本不存在一样，但是框内的文本会受浮动元素的影响，会移动以流出空间。用技术术语来说，浮动元素旁边的行框被缩短，从而给浮动元素留出空间，因此行框围绕浮动框。这种方法通常适用于文本环绕图像。</p>
-<p>这种运用可以很好的得到文本环绕的效果，但是当浮动元素的高度大于旁边一个框的高度，而影响到另外一个框时，这往往不是我们要的效果，如下图：</p>
-<center><img src="../../../../images/float_obscure.jpg" alt="float_obscure"></center>
-
-<p>使用浮动可能导致的问题有：</p>
-<ol>
-<li>背景不能显示</li>
-<li>边框不能撑开</li>
-<li>margin 设置值不能正确显示</li>
-</ol>
-<p>我们需要阻止后续的行框围绕在浮动框的外边，这时候就需要清除浮动了。清除浮动可以对包含这些行框的元素应用clear属性。<br>clear属性的值可以是left、right、both、none，它表示框的那些边不应该挨着浮动框。使用clear元素时，浏览器会在该元素顶上添加足够的外边框，使元素的顶边缘垂直下降到浮动框的下面。</p>
-<hr>
-<p>clear语法：</p>
-<pre><code>clear : none | left | right | both
-
-取值：
-
-none  :  默认值。允许两边都可以有浮动对象
-
-left   :  不允许左边有浮动对象
-
-right  :  不允许右边有浮动对象
-
-both  :  不允许有浮动对象&apos;    
-</code></pre><hr>
-<p>需要注意的是，<strong>clear属性仅仅会影响使用元素的本身，而不会对其他元素造成影响。</strong><br>如下图所示：</p>
-<center><img src="../../../../images/clear_self.png" alt="clear仅影响其本身"></center>
-
-<p>总而言之，浮动元素脱离了文本流，不影响周围元素，清除浮动实际上为前面的浮动元素留出了垂直空间。</p>
-<h2 id="怎么清除浮动？"><a href="#怎么清除浮动？" class="headerlink" title="怎么清除浮动？"></a>怎么清除浮动？</h2><h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><p>在最后一个段落下面添加一个空元素并清理它，这样可以迫使容器元素包围浮动元素。</p>
-<center><img src="../../../../images/solution1.png" alt="方法一示例"></center>
-
-<pre><code>.news {
-  background-color: gray;
-  border: solid 1px black;
-}
-
-.news img {
-  float: left;
-}
-
-.news p {
-  float: right;
-}
-
-.clear {
-  clear: both;
-}
-
-&lt;div class=&quot;news&quot;&gt;
-    &lt;img src=&quot;news-pic.jpg&quot; /&gt;
-    &lt;p&gt;some text&lt;/p&gt;
-    &lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre><p><strong>优点：</strong><br>简单易用，容易理解<br><strong>缺点：</strong><br>添加不必要的代码，需要添加无意义的标记，违背了我们结构和表现分离的原则，不建议使用。<br><em>ps:</em><br>方法一通常除了添加一个空div外，有的时候会添加<br>标签，使用br标签本身的clear属性来清除浮动，这样相对结构性好一点，但是结构和表现还是不分离的，同样不建议使用。</p>
-<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>不对浮动的文本和图像进行清理，选择浮动div容器</p>
-<pre><code>.news {
-  background-color: gray;
-  border: solid 1px black;
-  float: left;
-}
-
-.news img {
-  float: left;
-}
-
-.news p {
-  float: right;
-}
-
-&lt;div class=&quot;news&quot;&gt;
-    &lt;img src=&quot;news-pic.jpg&quot; /&gt;
-    &lt;p&gt;some text&lt;/p&gt;
-&lt;/div&gt;
-</code></pre><p><strong>优点：</strong><br>实现效果的代码简单。<br><strong>缺点：</strong><br>下一个元素会受到这个浮动元素的影响。<br><em>ps:</em><br>有人会通过浮动布局中几乎所有的东西来解决这个问题，但是这样浮动就会变得很复杂。</p>
-<h3 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h3><p>对父元素设置overflow属性。</p>
-<blockquote>
-<p>overflow属性定义在包含的内容对于制定的尺寸太大的情况下元素应该怎么样。</p>
-</blockquote>
-<p>overflow值为hidden和auto（注意: 仅这两个值）的overflow属性有一个很有用的副作用，它会自动地清理包含的任何浮动元素。</p>
-<p><strong>优点：</strong>不存在结构和表现分离的问题。<br><strong>缺点：</strong>设置了overflow属性值会影响它本来的表现，也就是产生overflow本身的效果，例如产生滚动条或截断内容等。<br><em>ps:</em><br>在IE6等低版本浏览器中，还需要注意兼容性，出发hasLayout才能使用，例如zoom:1。</p>
-<h3 id="方法四（较常用）"><a href="#方法四（较常用）" class="headerlink" title="方法四（较常用）"></a>方法四（较常用）</h3><p>使用CSS生成的内容或者JavaScript对浮动元素进行清理，并不直接向标记中添加标签元素进行清理，而是将它动态地添加到页面中。<br>例如指定进行清理的元素出现在哪里，常常需要添加一个类名，然后对该类名设置clearfix属性清理。</p>
-<pre><code>&lt;div class=&quot;news clearfix&quot;&gt;
-    &lt;img src=&quot;news-pic.jpg&quot; /&gt;
-    &lt;p&gt;some text&lt;/p&gt;
-&lt;/div&gt;
-</code></pre><p><strong>结合使用:after伪元素选择器和内容声明在指定的现有内容的末尾添加一个新的内容。常常为一个点（这样不引人注意），并将它设置为块级元素（display:block 使生成的元素以块级元素显示,占满剩余空间，这样才能改变它的高度），然后将它的height设置为0（避免生成内容破坏原有布局的高度），visibility设置为hidden（使生成的内容不可见，并允许可能被生成内容盖住的内容可以进行点击和交互;）,overflow设置为hidden,使内容不被溢出。因为被清理的元素在他们的顶外边距增加了空间，所以生成的内容需要将它的display属性设置为block。</strong></p>
-<pre><code>.clearfix:after { 
-    content: &quot;.&quot;;
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; 
-    overflow: hidden;
-} 
-</code></pre><p><strong>优点：</strong><br>不需要增加额外的元素。结合和表现分离<br><strong>缺点：</strong><br>需要添加类名。IE6-7不支持:after，使用 zoom:1触发 hasLayout。</p>
-<h3 id="方法五"><a href="#方法五" class="headerlink" title="方法五"></a>方法五</h3><p>父元素设置display:table</p>
-<p><strong>优点：</strong><br>结构语义化完全正确，代码量极少。<br><strong>缺点：</strong><br>盒模型属性已经改变，由此造成的一系列问题，得不偿失，不推荐使用。</p>
-<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><h4 id="伪元素-before和-after在清除时的区别："><a href="#伪元素-before和-after在清除时的区别：" class="headerlink" title="伪元素:before和:after在清除时的区别："></a>伪元素:before和:after在清除时的区别：</h4><p><strong>:before</strong>通常用于清除Margin Collpase。<br>那什么是Margin Collpase呢？其实就是我们俗称的外边距叠加。简单地说，当两个或更多垂直外边距相遇时，他们将形成一个外边距，这个外边距的高度等于两个发生叠加的外边距的高度重的较大者。</p>
-<p>它具备的两个特点是：</p>
-<ol>
-<li>普通文档流中的块级元素才会发生叠加，行内元素、浮动元素和绝对定位元素不会发生叠加。</li>
-<li>垂直外边距上的叠加。</li>
-</ol>
-<p>我们常常会使用before来清除叠加行为，在某两个边框中间添加一个不会显示的元素来清除叠加，使得外边距距离不缩短。</p>
-<h4 id="原理上阐述产生浮动的原因"><a href="#原理上阐述产生浮动的原因" class="headerlink" title="原理上阐述产生浮动的原因"></a>原理上阐述产生浮动的原因</h4><p>float等元素会触发BFC（<a href="https://www.w3.org/TR/CSS21/visuren.html#block-formatting）" target="_blank" rel="external">Block formatting contexts （块级格式化上下文）</a>）。<br>BFC从通俗上说就是一个单独的盒子，里面的子元素不会影响外面元素的布局，同时还存在于普通文本流中。<br>关于BFC如何触发及其特性的讲解可以看这篇文章————<a href="http://www.iyunlu.com/view/css-xhtml/55.html" target="_blank" rel="external">那些年我们一起清除过的浮动</a></p>
-<h2 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h2><p><a href="http://www.w3school.com.cn/css/css_positioning_floating.asp" target="_blank" rel="external">W3school上关于float的相关知识</a><br><a href="http://www.iyunlu.com/view/css-xhtml/55.html" target="_blank" rel="external">那些年我们一起清除过的浮动</a><br><a href="http://my.oschina.net/leipeng/blog/221125?fromerr=reoGyhha" target="_blank" rel="external">css清除浮动float的三种方法总结</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing" target="_blank" rel="external">MDN上关于CSS Margin Collpase的阐述</a><br><a href="https://www.w3.org/TR/CSS2/visuren.html#block-formatting" target="_blank" rel="external">W3C标准</a><br><a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank" rel="external">由Nicolas Gallagher大师提出来的新方法：A new micro clearfix hack</a></p>
-
-          
+          <h2 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h2><p>学习CSS有一小段时间了，在练习的时候经常碰到布局问题，特别是和浮动有关的。才考虑用浮动做布局时，常常碰到一些”不受控制”的问题，让布局的效果往往不在意料之内，这个时候需要<strong>清除浮动</strong>来解决问题。那么，<strong>什么是浮动呢？我们为什么需要清除浮动？怎么清除浮动？</strong>这里，试着把学习到的总结一下，让自己对浮动有一个较为系统话的理解。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/19/CSS之清除浮动/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -639,6 +499,15 @@ both  :  不允许有浮动对象&apos;
 
           
           
+             <span id="/2016/04/17/windows下pure安装/" class="leancloud_visitors" data-flag-title="windows下puer安装">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
 
           
         </div>
@@ -653,20 +522,13 @@ both  :  不允许有浮动对象&apos;
 
       
         
-          
-            <h2 id="puer简介"><a href="#puer简介" class="headerlink" title="puer简介"></a>puer简介</h2><p>Puer是一个可以实时编辑刷新的前端服务器。具体可以看<a href="https://github.com/leeluolee/puer" target="_blank" rel="external">puer</a></p>
-<h2 id="windows下puer安装方法简介"><a href="#windows下puer安装方法简介" class="headerlink" title="windows下puer安装方法简介"></a>windows下puer安装方法简介</h2><h3 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h3><p>首先，去<a href="https://nodejs.org/en/" target="_blank" rel="external">node.js官网</a>下载node.js并安装，根据你自己的机型下载对应版本，然后一直点下一步默认安装。<br>其中，node.js具有两个版本，LTS和Stable，其中LTS版本比较稳定安全，Stable版本迭代更新比较快。具体可以看下这篇文章中英文解释（ps，中文翻译一般）————<a href="http://www.zhoulujun.cn/zhoulujun/html/webfront/ECMAScript/nodejs/7745.html" target="_blank" rel="external">nodejs v4.4.2 LTS和 v5.10.1 Stable 有什么区别？</a></p>
-<h3 id="安装puer"><a href="#安装puer" class="headerlink" title="安装puer"></a>安装puer</h3><p>node.js安装好后，打开Node.js command prompt，使用全局命令安装puer：</p>
-<pre><code>npm install puer -g
-</code></pre><p>执行完后，puer就安装好了，具体的使用方法可以输入puer-h查看help。</p>
-<h3 id="使用puer"><a href="#使用puer" class="headerlink" title="使用puer"></a>使用puer</h3><p>打开Node.js command prompt或者命令行cmd或者terminal等，进入到当前需要实时编辑刷新的文件所在的文件夹，然后输入命令puer就可以使用puer进行实时编辑了。</p>
-<pre><code>cd /path/workspace
-puer
-</code></pre><p>puer会默认打开<a href="http://localhost:8000/页面，并贴心的帮你列出了所有你本地可用的ip以及当前的地址二维码，方便手机访问。" target="_blank" rel="external">http://localhost:8000/页面，并贴心的帮你列出了所有你本地可用的ip以及当前的地址二维码，方便手机访问。</a></p>
-<p>以上就是前端新人安装puer的过程了~<br>具体的细节和进阶使用请看<a href="http://leeluolee.github.io/2014/10/24/use-puer-helpus-developer-frontend/" target="_blank" rel="external">超简单工具puer——“低碳”的前后端分离开发</a></p>
-<h5 id="最后的最后：这是我的第一篇博客"><a href="#最后的最后：这是我的第一篇博客" class="headerlink" title="最后的最后：这是我的第一篇博客"></a>最后的最后：这是我的第一篇博客</h5><p>这是我用markdown写的第一篇博客<br>Today is 2016.4.17<br>hexo搭建使用的第一个主题为next，风格是：Pisces - 双栏 Scheme，小家碧玉似的清新</p>
-
-          
+          <h2 id="puer简介"><a href="#puer简介" class="headerlink" title="puer简介"></a>puer简介</h2><p>Puer是一个可以实时编辑刷新的前端服务器。具体可以看<a href="https://github.com/leeluolee/puer">puer</a></p>
+<h2 id="windows下puer安装方法简介"><a href="#windows下puer安装方法简介" class="headerlink" title="windows下puer安装方法简介"></a>windows下puer安装方法简介</h2><h3 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h3><p>首先，去<a href="https://nodejs.org/en/">node.js官网</a>下载node.js并安装，根据你自己的机型下载对应版本，然后一直点下一步默认安装。<br>其中，node.js具有两个版本，LTS和Stable，其中LTS版本比较稳定安全，Stable版本迭代更新比较快。具体可以看下这篇文章中英文解释（ps，中文翻译一般）————<a href="http://www.zhoulujun.cn/zhoulujun/html/webfront/ECMAScript/nodejs/7745.html">nodejs v4.4.2 LTS和 v5.10.1 Stable 有什么区别？</a></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/17/windows下pure安装/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -749,6 +611,15 @@ puer
           
 
           
+          
+             <span id="/2016/04/17/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
           
 
           
@@ -864,6 +735,17 @@ puer
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/vivijind" target="_blank" title="github">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
           
         </div>
 
@@ -1011,6 +893,99 @@ puer
   
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("9SRis8xjurTM1rP8EufRzNH5-gzGzoHsz", "DUFsVoj94qARnbYTTdPC59pr");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 
