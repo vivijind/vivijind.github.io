@@ -92,7 +92,13 @@
 <meta property="og:image" content="http://yoursite.com/images/优先级计算方法.png">
 <meta property="og:image" content="http://yoursite.com/images/空格换行.png">
 <meta property="og:image" content="http://yoursite.com/images/强制继承的属性.png">
-<meta property="og:updated_time" content="2016-04-24T13:49:17.763Z">
+<meta property="og:image" content="http://yoursite.com/images/CSS盒模型.png">
+<meta property="og:image" content="http://yoursite.com/images/圆角.png">
+<meta property="og:image" content="http://yoursite.com/images/overflow.png">
+<meta property="og:image" content="http://yoursite.com/images/阴影1.png">
+<meta property="og:image" content="http://yoursite.com/images/阴影2.png">
+<meta property="og:image" content="http://yoursite.com/images/盒模型注意.png">
+<meta property="og:updated_time" content="2016-04-24T14:15:34.652Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS总结">
 <meta name="twitter:description" content="CSS summaryCSS知识体系图：">
@@ -320,7 +326,7 @@ property2 : value;
 <li>在每条声明的末尾都加上分号。</li>
 <li>多重声明时，在每行只描述一个属性，这样可以增强样式定义的可读性</li>
 </ol>
-<p><strong>CSS注释方法</strong>： /<em> … </em>/</p>
+<p><strong>CSS注释方法</strong>： /* … */</p>
 <h3 id="浏览器私有属性"><a href="#浏览器私有属性" class="headerlink" title="浏览器私有属性"></a>浏览器私有属性</h3><p>CSS标准包括w3c的标准，也包括各浏览器厂商的不同标准。标准中各个属性也要经历从草案(WD)到推荐(REC)的过程，css3中的属性进展都不一样。浏览器厂商在标准尚未明确情况下提前支持会有风险，同时也会出现有的浏览器厂商支持的好，有的支持的不好，所以就用厂商前缀加以区分。</p>
 <ul>
 <li>chrome,safari<ul>
@@ -654,7 +660,87 @@ property2 : value;
 </ul>
 <h3 id="强制继承的属性"><a href="#强制继承的属性" class="headerlink" title="强制继承的属性"></a>强制继承的属性</h3><center><img src="/images/强制继承的属性.png" alt="强制继承的属性"></center>
 
-<h2 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h2>
+<h2 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h2><h3 id="CSS盒模型简介"><a href="#CSS盒模型简介" class="headerlink" title="CSS盒模型简介"></a>CSS盒模型简介</h3><center><img src="/images/CSS盒模型.png" alt="css盒模型"></center>
+
+<h3 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h3><ul>
+<li>width：&lt;length&gt; | &lt;percentage&gt; | auto | inherit <ul>
+<li>百分比参照物为其父元素（大部分情况）</li>
+<li>引申： max-width、min-width</li>
+</ul>
+</li>
+<li>height：&lt;length&gt; | &lt;percentage&gt; | auto | inherit <ul>
+<li>引申： max-width、min-width</li>
+</ul>
+</li>
+</ul>
+<h3 id="Padding"><a href="#Padding" class="headerlink" title="Padding"></a>Padding</h3><p>padding: [&lt;length&gt; | &lt;percentage&gt;] {1,4}  | inherit </p>
+<ul>
+<li>对面相等，后者省略，4面相等，只设一个</li>
+<li>四个值：上右下左 TRBL</li>
+<li>三个值：上右下，然后左复制右</li>
+<li>二个值：上右，上复制下，左复制右</li>
+<li>一个值：四边都是这个值</li>
+<li>也可以单个设置：padding-top、padding-right、padding-bottom、padding-left</li>
+<li>引申：margin、border 类似</li>
+</ul>
+<h3 id="Margin"><a href="#Margin" class="headerlink" title="Margin"></a>Margin</h3><p>margin: [&lt;length&gt; | &lt;percentage&gt; | auto] {1,4}  | inherit </p>
+<ul>
+<li>margin合并：毗邻元素margin会合并，父元素与第一个/最后一个元素考虑合并</li>
+<li>利用auto妙用   margin: 0 auto——水平居中</li>
+</ul>
+<h3 id="Border"><a href="#Border" class="headerlink" title="Border"></a>Border</h3><p>边框 border: [&lt;border-width&gt; || &lt;border-style&gt; || &lt;border-color&gt;]  | inherit </p>
+<ul>
+<li>border-width: [&lt;length&gt; | thin | medium | thick] {1,4} | inherit 默认边框值</li>
+<li>border-style: [solid | dashed | dotted |…] {1,4} | inherit</li>
+<li>border-color: [&lt;color&gt;|transparent]{1,4} | inherit <ul>
+<li>默认字体颜色，颜色可以有一个或者四个值，分别表示边框中上右下左四个颜色</li>
+<li>好玩的运用： 用边框做出3/4圆</li>
+<li>border:2px solid;border-color:#333 #333 transparent;border-radius:50%;</li>
+</ul>
+</li>
+</ul>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
+<li>圆角 border-radius: [&lt;length&gt;|&lt;percentage&gt;]{1,4}[/[&lt;length&gt;|percentage&gt;]{1,4}]?<ul>
+<li>border-radius:10px;  表示四个角水平和垂直半径都是10px</li>
+<li><img src="/images/圆角.png" alt="圆角"></li>
+</ul>
+</li>
+<li>防止盒子内容超出 overflow: visible | hidden | scroll | auto<br>  <center><img src="/images/overflow.png" alt="overflow"></center><ul>
+<li>引申： overflow-x, overflow-y</li>
+<li>Overflow-x 是否对内容的左/右边缘进行裁剪。</li>
+<li>Overflow-y 是否对内容的上/下边缘进行裁剪。</li>
+</ul>
+</li>
+<li>盒子大小box-sizing: content-box | border-box | inherit 指定当前属性是哪个区域的宽高（设置width、height指定的区域）<ul>
+<li>content-box：padding和border不被包含在定义的width和height之内。对象的实际宽度等于设置的width值和border、padding之和，即 ( Element width = width + border + padding ) 此属性表现为标准模式下的盒模型。</li>
+<li>border-box：padding和border被包含在定义的width和height之内。对象的实际宽度就等于设置的width值，即使定义有border和padding也不会改变对象的实际宽度，即 ( Element width = width ) 此属性表现为怪异模式下的盒模型。</li>
+<li><a href="http://www.w3chtml.com/css3/properties/user-interface/box-sizing.html" target="_blank" rel="external">http://www.w3chtml.com/css3/properties/user-interface/box-sizing.html</a></li>
+</ul>
+</li>
+<li>盒阴影 box-shadow: none | &lt;shadow&gt;[,&lt;shadow&gt;]*<ul>
+<li>&lt;shadow&gt;: inset? &amp;&amp; &lt;length&gt;{2,4} &amp;&amp; &lt;color&gt;?  color默认值为文字颜色<center><img src="/images/阴影1.png" alt="阴影1"></center><br><center><img src="/images/阴影2.png" alt="阴影2"></center></li>
+<li>阴影不占空间，仅修饰性的效果</li>
+</ul>
+</li>
+<li>轮廓 outline: [&lt;outline-width&gt; || &lt;outline-style&gt; || &lt;outline-color&gt;]  | inherit <ul>
+<li>outline-width: &lt;length&gt; | thin | medium | thick | inherit 默认边框值</li>
+<li>outline-style: solid | dashed | dotted |…| inherit</li>
+<li>outline-color: &lt;color&gt;|invert | inherit invert表示和当前背景色相反的颜色</li>
+<li>outline不占用空间</li>
+<li>在border外</li>
+</ul>
+</li>
+</ul>
+<h3 id="注意及补充资料"><a href="#注意及补充资料" class="headerlink" title="注意及补充资料"></a>注意及补充资料</h3><h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>在CSS中margin是指从自身边框到另一个容器边框之间的距离，就是容器外距离。在CSS中padding是指自身边框到自身内部另一个容器边框之间的距离，就是容器内距离。<br>    <center><img src="/images/盒模型注意.png" alt="盒模型注意"></center></p>
+<h4 id="补充资料"><a href="#补充资料" class="headerlink" title="补充资料"></a>补充资料</h4><h5 id="margin合并问题"><a href="#margin合并问题" class="headerlink" title="margin合并问题"></a>margin合并问题</h5><p>margin合并问题，详见<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin_collapsing" target="_blank" rel="external">MDN 外边距合并</a><br>    <center><a href="/images/margin合并.png">margin合并</a></center></p>
+<h5 id="CSS属性的浏览器兼容行"><a href="#CSS属性的浏览器兼容行" class="headerlink" title="CSS属性的浏览器兼容行"></a>CSS属性的浏览器兼容行</h5><p>关于CSS属性的浏览器兼容性，可以通过<a href="http://caniuse.com/" target="_blank" rel="external">caniuse</a>查询。</p>
+<ol>
+<li>border-radius ie8及以下不支持</li>
+<li>box-sizing ie7及以下不支持</li>
+<li>box-shadow ie8及以下不支持</li>
+<li>outline ie7及以下不支持</li>
+</ol>
+
       
     </div>
     
@@ -811,7 +897,7 @@ property2 : value;
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-summary"><span class="nav-number">1.</span> <span class="nav-text">CSS summary</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS简介"><span class="nav-number">1.1.</span> <span class="nav-text">CSS简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS概述"><span class="nav-number">1.1.1.</span> <span class="nav-text">CSS概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引入方法"><span class="nav-number">1.1.2.</span> <span class="nav-text">引入方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">1.1.3.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器私有属性"><span class="nav-number">1.1.4.</span> <span class="nav-text">浏览器私有属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性值语法"><span class="nav-number">1.1.5.</span> <span class="nav-text">属性值语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#组合符号"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">组合符号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数量符号"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">数量符号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#规则语法"><span class="nav-number">1.1.5.3.</span> <span class="nav-text">@规则语法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS选择器"><span class="nav-number">1.2.</span> <span class="nav-text">CSS选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单选择器"><span class="nav-number">1.2.1.</span> <span class="nav-text">简单选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承"><span class="nav-number">1.2.2.</span> <span class="nav-text">继承</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS优先级"><span class="nav-number">1.3.</span> <span class="nav-text">CSS优先级</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#计算方法"><span class="nav-number">1.3.1.</span> <span class="nav-text">计算方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS层叠"><span class="nav-number">1.3.2.</span> <span class="nav-text">CSS层叠</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS改变优先级"><span class="nav-number">1.3.3.</span> <span class="nav-text">CSS改变优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#讨论区问题整理"><span class="nav-number">1.3.4.</span> <span class="nav-text">讨论区问题整理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#class-VS-ID"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">class VS ID</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css选择器使用"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">css选择器使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本"><span class="nav-number">1.4.</span> <span class="nav-text">文本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字体"><span class="nav-number">1.4.1.</span> <span class="nav-text">字体</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字体大小"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">字体大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字体类型"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">字体类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#粗体"><span class="nav-number">1.4.1.3.</span> <span class="nav-text">粗体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#斜体（字体风格）"><span class="nav-number">1.4.1.4.</span> <span class="nav-text">斜体（字体风格）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#行高"><span class="nav-number">1.4.1.5.</span> <span class="nav-text">行高</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小型大写字母的字体"><span class="nav-number">1.4.1.6.</span> <span class="nav-text">小型大写字母的字体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#font缩写"><span class="nav-number">1.4.1.7.</span> <span class="nav-text">font缩写</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#段落"><span class="nav-number">1.4.2.</span> <span class="nav-text">段落</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#颜色"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对齐"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">对齐</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#水平对齐"><span class="nav-number">1.4.2.2.1.</span> <span class="nav-text">水平对齐</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#垂直对齐"><span class="nav-number">1.4.2.2.2.</span> <span class="nav-text">垂直对齐</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#缩进"><span class="nav-number">1.4.2.2.3.</span> <span class="nav-text">缩进</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#空格、换行"><span class="nav-number">1.4.2.2.4.</span> <span class="nav-text">空格、换行</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#间距"><span class="nav-number">1.4.2.2.5.</span> <span class="nav-text">间距</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变形"><span class="nav-number">1.4.2.3.</span> <span class="nav-text">变形</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方向"><span class="nav-number">1.4.2.4.</span> <span class="nav-text">方向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标注"><span class="nav-number">1.4.2.5.</span> <span class="nav-text">标注</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果"><span class="nav-number">1.4.3.</span> <span class="nav-text">效果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#阴影"><span class="nav-number">1.4.3.1.</span> <span class="nav-text">阴影</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文本溢出"><span class="nav-number">1.4.3.2.</span> <span class="nav-text">文本溢出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#光标"><span class="nav-number">1.4.3.3.</span> <span class="nav-text">光标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#轮廓"><span class="nav-number">1.4.3.4.</span> <span class="nav-text">轮廓</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强制继承的属性"><span class="nav-number">1.4.4.</span> <span class="nav-text">强制继承的属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#盒模型"><span class="nav-number">1.5.</span> <span class="nav-text">盒模型</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-summary"><span class="nav-number">1.</span> <span class="nav-text">CSS summary</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS简介"><span class="nav-number">1.1.</span> <span class="nav-text">CSS简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS概述"><span class="nav-number">1.1.1.</span> <span class="nav-text">CSS概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引入方法"><span class="nav-number">1.1.2.</span> <span class="nav-text">引入方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">1.1.3.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器私有属性"><span class="nav-number">1.1.4.</span> <span class="nav-text">浏览器私有属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性值语法"><span class="nav-number">1.1.5.</span> <span class="nav-text">属性值语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#组合符号"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">组合符号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数量符号"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">数量符号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#规则语法"><span class="nav-number">1.1.5.3.</span> <span class="nav-text">@规则语法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS选择器"><span class="nav-number">1.2.</span> <span class="nav-text">CSS选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单选择器"><span class="nav-number">1.2.1.</span> <span class="nav-text">简单选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承"><span class="nav-number">1.2.2.</span> <span class="nav-text">继承</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS优先级"><span class="nav-number">1.3.</span> <span class="nav-text">CSS优先级</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#计算方法"><span class="nav-number">1.3.1.</span> <span class="nav-text">计算方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS层叠"><span class="nav-number">1.3.2.</span> <span class="nav-text">CSS层叠</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS改变优先级"><span class="nav-number">1.3.3.</span> <span class="nav-text">CSS改变优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#讨论区问题整理"><span class="nav-number">1.3.4.</span> <span class="nav-text">讨论区问题整理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#class-VS-ID"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">class VS ID</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css选择器使用"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">css选择器使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本"><span class="nav-number">1.4.</span> <span class="nav-text">文本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字体"><span class="nav-number">1.4.1.</span> <span class="nav-text">字体</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字体大小"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">字体大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字体类型"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">字体类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#粗体"><span class="nav-number">1.4.1.3.</span> <span class="nav-text">粗体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#斜体（字体风格）"><span class="nav-number">1.4.1.4.</span> <span class="nav-text">斜体（字体风格）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#行高"><span class="nav-number">1.4.1.5.</span> <span class="nav-text">行高</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小型大写字母的字体"><span class="nav-number">1.4.1.6.</span> <span class="nav-text">小型大写字母的字体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#font缩写"><span class="nav-number">1.4.1.7.</span> <span class="nav-text">font缩写</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#段落"><span class="nav-number">1.4.2.</span> <span class="nav-text">段落</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#颜色"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对齐"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">对齐</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#水平对齐"><span class="nav-number">1.4.2.2.1.</span> <span class="nav-text">水平对齐</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#垂直对齐"><span class="nav-number">1.4.2.2.2.</span> <span class="nav-text">垂直对齐</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#缩进"><span class="nav-number">1.4.2.2.3.</span> <span class="nav-text">缩进</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#空格、换行"><span class="nav-number">1.4.2.2.4.</span> <span class="nav-text">空格、换行</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#间距"><span class="nav-number">1.4.2.2.5.</span> <span class="nav-text">间距</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变形"><span class="nav-number">1.4.2.3.</span> <span class="nav-text">变形</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方向"><span class="nav-number">1.4.2.4.</span> <span class="nav-text">方向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标注"><span class="nav-number">1.4.2.5.</span> <span class="nav-text">标注</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果"><span class="nav-number">1.4.3.</span> <span class="nav-text">效果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#阴影"><span class="nav-number">1.4.3.1.</span> <span class="nav-text">阴影</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文本溢出"><span class="nav-number">1.4.3.2.</span> <span class="nav-text">文本溢出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#光标"><span class="nav-number">1.4.3.3.</span> <span class="nav-text">光标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#轮廓"><span class="nav-number">1.4.3.4.</span> <span class="nav-text">轮廓</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强制继承的属性"><span class="nav-number">1.4.4.</span> <span class="nav-text">强制继承的属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#盒模型"><span class="nav-number">1.5.</span> <span class="nav-text">盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS盒模型简介"><span class="nav-number">1.5.1.</span> <span class="nav-text">CSS盒模型简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Content"><span class="nav-number">1.5.2.</span> <span class="nav-text">Content</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Padding"><span class="nav-number">1.5.3.</span> <span class="nav-text">Padding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Margin"><span class="nav-number">1.5.4.</span> <span class="nav-text">Margin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Border"><span class="nav-number">1.5.5.</span> <span class="nav-text">Border</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.5.6.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意及补充资料"><span class="nav-number">1.5.7.</span> <span class="nav-text">注意及补充资料</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注意"><span class="nav-number">1.5.7.1.</span> <span class="nav-text">注意</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#补充资料"><span class="nav-number">1.5.7.2.</span> <span class="nav-text">补充资料</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#margin合并问题"><span class="nav-number">1.5.7.2.1.</span> <span class="nav-text">margin合并问题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CSS属性的浏览器兼容行"><span class="nav-number">1.5.7.2.2.</span> <span class="nav-text">CSS属性的浏览器兼容行</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
