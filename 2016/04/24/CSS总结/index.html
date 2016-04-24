@@ -1,0 +1,1055 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSS," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="CSS summaryCSS知识体系图：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS总结">
+<meta property="og:url" content="http://yoursite.com/2016/04/24/CSS总结/index.html">
+<meta property="og:site_name" content="vivijind">
+<meta property="og:description" content="CSS summaryCSS知识体系图：">
+<meta property="og:image" content="http://yoursite.com/images/CSS总结.jpeg">
+<meta property="og:image" content="http://yoursite.com/images/CSS语法示例.png">
+<meta property="og:image" content="http://yoursite.com/images/常用标识符.png">
+<meta property="og:image" content="http://yoursite.com/images/优先级计算方法.png">
+<meta property="og:image" content="http://yoursite.com/images/空格换行.png">
+<meta property="og:image" content="http://yoursite.com/images/强制继承的属性.png">
+<meta property="og:updated_time" content="2016-04-24T13:49:17.763Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS总结">
+<meta name="twitter:description" content="CSS summaryCSS知识体系图：">
+<meta name="twitter:image" content="http://yoursite.com/images/CSS总结.jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '邓瑾'
+    }
+  };
+</script>
+
+  <title> CSS总结 | vivijind </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">vivijind</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-lab">
+          <a href="/lab" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            实验室
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                CSS总结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-24T21:23:52+08:00" content="2016-04-24">
+              2016-04-24
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/24/CSS总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/24/CSS总结/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/04/24/CSS总结/" class="leancloud_visitors" data-flag-title="CSS总结">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="CSS-summary"><a href="#CSS-summary" class="headerlink" title="CSS summary"></a>CSS summary</h1><p>CSS知识体系图：</p>
+<center><img src="/images/CSS总结.jpeg" alt="CSS知识体系图"></center>
+
+<a id="more"></a>
+<h2 id="CSS简介"><a href="#CSS简介" class="headerlink" title="CSS简介"></a>CSS简介</h2><h3 id="CSS概述"><a href="#CSS概述" class="headerlink" title="CSS概述"></a>CSS概述</h3><p>CSS，cascading style sheet，<a href="http://www.w3school.com.cn/css/" target="_blank" rel="external">层叠样式表</a> 。HTML主要对应页面的内容，CSS主要对应页面的表现。<br>对CSS历史的了解可以见：<a href="https://www.w3.org/Style/LieBos2e/history/" target="_blank" rel="external">CSS的早期历史</a></p>
+<h3 id="引入方法"><a href="#引入方法" class="headerlink" title="引入方法"></a>引入方法</h3><p><strong>外部样式表</strong>&lt;link rel=”stylesheet” href =”base.css”&gt;，herf里引入外部的css文件</p>
+<p><strong>内部样式表</strong>&lt;style&gt;&lt;/style&gt; （将页面各种元素的设置集中写在&lt;head&gt;&lt;/head&gt;标签里）</p>
+<p>内嵌样式表：&lt;p style=””&gt; 在标签内嵌入，该方法将html和css杂糅在一起， 不利于后期维护</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p><a href="http://www.w3school.com.cn/css/css_syntax.asp" target="_blank" rel="external">CSS 语法规则</a>由两个主要的部分构成：选择器，以及一条或多条声明。</p>
+<pre><code>selector（选择器）{
+property1 : value;  //属性申明，属性名：属性值
+property2 : value;
+...
+}
+</code></pre><p>示例（使用花括号来包围声明）：<br>    <center><img src="/images/CSS语法示例.png" alt="CSS语法示例"></center></p>
+<p>书写建议：</p>
+<ol>
+<li>在每条声明的末尾都加上分号。</li>
+<li>多重声明时，在每行只描述一个属性，这样可以增强样式定义的可读性</li>
+</ol>
+<p><strong>CSS注释方法</strong>： /<em> … </em>/</p>
+<h3 id="浏览器私有属性"><a href="#浏览器私有属性" class="headerlink" title="浏览器私有属性"></a>浏览器私有属性</h3><p>CSS标准包括w3c的标准，也包括各浏览器厂商的不同标准。标准中各个属性也要经历从草案(WD)到推荐(REC)的过程，css3中的属性进展都不一样。浏览器厂商在标准尚未明确情况下提前支持会有风险，同时也会出现有的浏览器厂商支持的好，有的支持的不好，所以就用厂商前缀加以区分。</p>
+<ul>
+<li>chrome,safari<ul>
+<li>-webkit-</li>
+</ul>
+</li>
+<li>firefox<ul>
+<li>-moz-</li>
+</ul>
+</li>
+<li>IE<ul>
+<li>-ms-</li>
+</ul>
+</li>
+<li>opera<ul>
+<li>-o-</li>
+</ul>
+</li>
+</ul>
+<p>示例：</p>
+<pre><code>.pic{
+    -webkit-transform:rotate(-3deg);
+    -moz-transform:rotate(-3deg);
+    -ms-transform:rotate(-3deg);
+    -o-transform:rotate(-3deg);
+    transform:rotate(-3deg);
+}
+</code></pre><h3 id="属性值语法"><a href="#属性值语法" class="headerlink" title="属性值语法"></a>属性值语法</h3><p>基本元素（关键字，类型、符号、inherit,initial（隐藏））<br>取值的几种方法：</p>
+<ul>
+<li>CSS关键词（例如auto,red,disc等）</li>
+<li>CSS基本数据类型，基本类型使用包含在尖括号中的类型名表示（例如&lt;length&gt;、&lt;number&gt;等）</li>
+<li>取值与其属性取值范围一致的类型，使用包含在尖括号中的带有引号的属性名表示（例如&lt;’border-top-color’&gt;等）</li>
+<li>取值不同于其属性的类型，使用包含在尖括号中的属性名表示（例如&lt;margin-width&gt;、&lt;border-width&gt;等）</li>
+</ul>
+<h4 id="组合符号"><a href="#组合符号" class="headerlink" title="组合符号"></a>组合符号</h4><ul>
+<li>空格 ：&lt;’font-size’&gt; &lt;’font-family’&gt; 必须出现且顺序不能变</li>
+<li>&amp;&amp;   : &lt;length&gt;&amp;&amp;&lt;color&gt; 必须出现，顺序可变</li>
+<li>||   : underline || overline || line-through || blink 至少出现一个，顺序可变</li>
+<li>|    ： &lt;color&gt; | transparent 仅能出现一个</li>
+<li>[]   ：bold [thin ||&lt;length&gt;] 分组作用，大括号内可以看成一个</li>
+</ul>
+<h4 id="数量符号"><a href="#数量符号" class="headerlink" title="数量符号"></a>数量符号</h4><ul>
+<li>&lt;length&gt; 出现一次</li>
+<li>+ 出现一次或者多次</li>
+<li>？ 可以出现也可以不出现</li>
+<li>{} &lt;length&gt;{2,4}  {}内两个数字分别表示最少和最多出现次数，空格隔开</li>
+<li>* 可以出现0,1…n次</li>
+<li># 需要出现一次或者多次，中间用逗号隔开</li>
+</ul>
+<h4 id="规则语法"><a href="#规则语法" class="headerlink" title="@规则语法"></a>@规则语法</h4><p>@规则以一个关键词@开始，紧跟在后的是一个标识符。<br>格式：@ 标识符 xxx; @ 标识符 xxx {}<br><a href="http://www.w3chtml.com/css3/rules/" target="_blank" rel="external">常用标识符</a>:<br>    <center><img src="/images/常用标识符.png" alt="常用标识符"></center></p>
+<h2 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h2><p>在CSS中，选择器是一种模式，用于选择需要添加样式的元素。具体见：<a href="http://www.w3school.com.cn/cssref/css_selectors.asp" target="_blank" rel="external">CSS选择器</a><br>同时，需要注意的是，不同浏览器对选择器的支持不一样。<br>选择器兼容性说明：<br>本节中所讲的选择器，主流的浏览器基本都支持，IE低版本有较多的兼容问题，具体可查看<a href="http://www.quirksmode.org/css/selectors/" target="_blank" rel="external">该页面</a>。<br>expression—Array&lt;element&gt;</p>
+<h3 id="简单选择器"><a href="#简单选择器" class="headerlink" title="简单选择器"></a>简单选择器</h3><ul>
+<li>标签选择器   标签{}</li>
+<li>类选择器（class 属性）  .class{}<ul>
+<li>.</li>
+<li>字母、数字，-，_</li>
+<li>className必须以字母开头</li>
+<li>区分大小写</li>
+<li>出现多次</li>
+</ul>
+</li>
+<li>id选择器   #id{}<ul>
+<li>#</li>
+<li>字母、数字，-，_</li>
+<li>id必须以字母开头</li>
+<li>区分大小写</li>
+<li>相同ID仅出现一次</li>
+</ul>
+</li>
+<li>通配符选择器   *{}</li>
+<li>属性选择器（选择具有某个属性的元素）   [属性]{} <ul>
+<li>[att=val]{} 属性等于某个值的选择器 #nav{} == [id = nav]{}  ID选择器为其特例</li>
+<li>[att~=val]{} 表示属性中包含xx值，使用空格分割  .sports{} == [class~=sports]{}  类选择器为其特例 </li>
+<li>[att|=val]{} 分隔符等号 选择值为val或者val-开头的元素 （不常用）</li>
+<li>[att^=val]{} 以某个值开头的属性选择器</li>
+<li>[att$=val]{} 以什么结尾的元素</li>
+<li>[att*=val]{} 包含什么的元素 </li>
+</ul>
+</li>
+<li>伪类选择器<ul>
+<li>a:link{color:gray;} 伪类选中所有a标签且href有值的</li>
+<li>a:visited{} 访问过的</li>
+<li>a:hover{} hover上去的效果</li>
+<li>a:active{} 鼠标点击上去的样式</li>
+<li>:enabled 可用状态</li>
+<li>:disabled 不可用状态</li>
+<li>:checked 单选复选框状态，选中状态</li>
+<li>:first-child 选中第一项</li>
+<li>:last-child 选中最后一项</li>
+<li>:nth=child(even) 选中哪项（正着） old even 3n+1之类的</li>
+<li>:nth-last-child(even) 倒着选中哪项</li>
+<li>:only-child 选中只有一项的</li>
+<li>:fist-of-type 选中第一个类型的元素</li>
+<li>:last-of-type 选中最后一个</li>
+<li>:nth-of-type(2n)</li>
+<li>:nth-last-of-type(2n)</li>
+<li>:only-of-type</li>
+<li>不常用 <ul>
+<li>:empty 没有子元素的元素 </li>
+<li>:root html根标签 </li>
+<li>:not() 不包含某个选择器的元素 </li>
+<li>:target 目标元素 </li>
+<li>:lang() 选中一些language值是某些特殊值的元素</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>伪元素选择器<br>伪元素是对元素中的特定内容进行操作，它所操作的层次比伪类更深了一层，也因此它的动态性比伪类要低得多。实际上，设计伪元素的目的就是去选取诸如元素内容第一个字（母）、第一行，选取某些内容前面或后面这种普通的选择器无法完成的工作。它控制的内容实际上和元素是相同的，但是它本身只是基于元素的抽象，并不存在于文档中，所以叫伪元素。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>伪元素选择器</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:: first-letter</td>
+<td>将特殊样式添加到文本的首字母</td>
+</tr>
+<tr>
+<td>:: first-line</td>
+<td>将特殊样式添加到文本的首行</td>
+</tr>
+<tr>
+<td>:: before{content:”before”}</td>
+<td>在某个元素前插入一段内容</td>
+</tr>
+<tr>
+<td>:: after{content:”after”}</td>
+<td>在某个元素后插入一段内容</td>
+</tr>
+<tr>
+<td>:: selection</td>
+<td>用于被元素选中的内容</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>组合选择器</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E,F</td>
+<td>多元素选择器</td>
+<td>同时匹配所有E元素或F元素，E和F之间用逗号分隔,Div,p { color:#f00; }</td>
+</tr>
+<tr>
+<td>E F</td>
+<td>后代元素选择器，匹配所有属于E元素后代的F元素，E和F之间用空格分隔</td>
+<td>#nav li { display:inline; };  li a { font-weight:bold; }</td>
+</tr>
+<tr>
+<td>E &gt; F</td>
+<td>子元素选择器，匹配所有E元素的子元素F</td>
+<td>div &gt; strong { color:#f00; }</td>
+</tr>
+<tr>
+<td>E + F</td>
+<td>毗邻元素选择器，匹配所有紧随E元素之后的同级元素F</td>
+<td>p + p { color:#f00; }</td>
+</tr>
+<tr>
+<td>E ~ F</td>
+<td>通用兄弟选择器, 匹配所有指定元素E的相邻兄弟元素F</td>
+<td>div~p {background-color:yellow;}</td>
+</tr>
+</tbody>
+</table>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>子元素会继承父元素的样式</p>
+<ul>
+<li>继承属性（自动继承）<ul>
+<li>color</li>
+<li>font</li>
+<li>text-align</li>
+<li>list-style</li>
+<li>…</li>
+</ul>
+</li>
+<li>非继承属性<ul>
+<li>background</li>
+<li>border</li>
+<li>position</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+<p>显示运用inherited可以把非继承变成继承</p>
+<h2 id="CSS优先级"><a href="#CSS优先级" class="headerlink" title="CSS优先级"></a>CSS优先级</h2><h3 id="计算方法"><a href="#计算方法" class="headerlink" title="计算方法"></a>计算方法</h3><ul>
+<li>计算方法（从上往下权重降低）<ul>
+<li>a=行内样式</li>
+<li>b=ID选择器数量</li>
+<li>c=类、伪类的属性选择器的数量</li>
+<li>d=标签选择器和伪元素选择器的数量<center><img src="/images/优先级计算方法.png" alt="优先级计算方法"></center></li>
+</ul>
+</li>
+<li>优先级高的样式覆盖优先级低的样式</li>
+</ul>
+<h3 id="CSS层叠"><a href="#CSS层叠" class="headerlink" title="CSS层叠"></a>CSS层叠</h3><ul>
+<li>相同的属性会覆盖<ul>
+<li>优先级</li>
+<li>后面覆盖前面</li>
+</ul>
+</li>
+<li>不同的属性合并</li>
+</ul>
+<h3 id="CSS改变优先级"><a href="#CSS改变优先级" class="headerlink" title="CSS改变优先级"></a>CSS改变优先级</h3><ul>
+<li>改变先后顺序</li>
+<li>提升选择器的优先级</li>
+<li>!important 增加!important关键字（当前面两种方法都不可以用时，才采取important的方式）</li>
+</ul>
+<h3 id="讨论区问题整理"><a href="#讨论区问题整理" class="headerlink" title="讨论区问题整理"></a>讨论区问题整理</h3><h4 id="class-VS-ID"><a href="#class-VS-ID" class="headerlink" title="class VS ID"></a>class VS ID</h4><blockquote>
+<p>一个页面中，id的值是唯一的，一个页面中不可以有两个元素的id相同，但class可以。<br>在实际开发中，如果是要定义样式会推荐使用class</p>
+<p>id选择器一般用于在写javascript事件处理或者写特效等时通过ID获取DOM对象，class 顾名思义就是类，主要用作控制单个标签或多个功能类似标签的样式，当然一个类可以有多个class，多个标签可以共用一个class.</p>
+</blockquote>
+<h4 id="css选择器使用"><a href="#css选择器使用" class="headerlink" title="css选择器使用"></a>css选择器使用</h4><blockquote>
+<p>选择器对页面性能的影响，对现在的浏览器来说，可以忽略不计。<br>id选择器会影响复用（一个页面不能有两个相同id的元素），所以一般不使用。<br>一般类选择器和标签选择器会比较多的使用。</p>
+<p>css选择器在使用的时候，除了考虑优先级,还要考虑：比如浏览器版本是否支持此选择器、此选择器是否能简写CSS代码，尽量用较少的代码完成同样的效果最好</p>
+</blockquote>
+<h2 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h2><h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><h4 id="字体大小"><a href="#字体大小" class="headerlink" title="字体大小"></a>字体大小</h4><ul>
+<li>font-size: &lt;length&gt;|&lt;percentage&gt;|&lt;absolute-size&gt;|&lt;relative-size&gt;</li>
+<li>例如12px 2em 200%</li>
+<li>2em（2倍字体，建议使用相对值） 12px（绝对值） 字体大小</li>
+<li>长度单位：<ul>
+<li>em表示当前字体的倍数，相对大小值 </li>
+<li>百分比表示整个页面的宽度 </li>
+<li>mm、cm、dm等表示毫米，厘米，分米 </li>
+<li>px表示多少个像素点 </li>
+<li>pt表示印刷上的磅，七十二分之一英寸</li>
+</ul>
+</li>
+</ul>
+<h4 id="字体类型"><a href="#字体类型" class="headerlink" title="字体类型"></a>字体类型</h4><ul>
+<li>font-family: [&lt;family-name&gt;|&lt;generic-family&gt;]#<ul>
+<li>&lt;generic-family&gt; = serif | sans-serif | cursive | fantasy | monospace</li>
+<li>五大类字体 serif(英文，矢量字体） sans-serif modospace（宽字体） cursive（手写字体） fatasy（无法归类的字体，特殊字符之类） </li>
+<li>可制定大类也可制定具体字体名字，用”,”来加入多个字体，表示备选字体（当浏览器找不到字体时，会采用默认字体，提供备用字体可以提供多个选择）</li>
+</ul>
+</li>
+</ul>
+<h4 id="粗体"><a href="#粗体" class="headerlink" title="粗体"></a>粗体</h4><ul>
+<li>font-weight: normal | bold | bolder | lighter</li>
+<li>bold(加粗) or 900-100（数字表示粗，不同浏览器支持数字不同）</li>
+</ul>
+<h4 id="斜体（字体风格）"><a href="#斜体（字体风格）" class="headerlink" title="斜体（字体风格）"></a>斜体（字体风格）</h4><ul>
+<li>font-style: normal | italic（字体本身的斜体） | oblique（字体没有斜体时，强制倾斜，浏览器计算得到）</li>
+<li>normal（正常） italic（斜体，厂家设计的斜体） obique（浏览器计算产生的斜体）</li>
+</ul>
+<h4 id="行高"><a href="#行高" class="headerlink" title="行高"></a>行高</h4><ul>
+<li>line-height : normal | &lt;number&gt; | &lt;length&gt; | &lt;percentage&gt;  行的高度（行间距）<ul>
+<li>例如12px 3em（em表示当前字体的大小） 300% 3（等价于300%，略微有差别，见下）</li>
+<li>300%设置时，如果把里面某段字设置为小的大小，行高不变，为先计算，后继承</li>
+<li>3设置时，如果把里面字段设置为小的大小，行高根据改后的大小*3，为不计算，直接继承</li>
+<li>和height的区别：line-height只针对行元素，height针对其他所有元素<ul>
+<li>line-height：行高 设置文字间上下距离还有可以让层里面的东西可以垂直居中</li>
+<li>height：高度 就是定义一个层 或某样东西的高度</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="小型大写字母的字体"><a href="#小型大写字母的字体" class="headerlink" title="小型大写字母的字体"></a>小型大写字母的字体</h4><ul>
+<li>font-variant: small-caps （小的大写字母）</li>
+<li>font-variant 属性设置小型大写字母的字体显示文本，这意味着所有的小写字母均会被转换为大写，但是所有使用小型大写字体的字母与其余文本相比，其字体尺寸更小。</li>
+</ul>
+<h4 id="font缩写"><a href="#font缩写" class="headerlink" title="font缩写"></a>font缩写</h4><ul>
+<li>font：[[&lt;font-style&gt;||&lt;font-variant&gt;||&lt;font-weight&gt;||&lt;font-stretch&gt;]? &lt;font-size&gt; [/&lt;line-height&gt;]? &lt;font-family&gt; ] | caption | icon | menu | message-box | small-caption | status-bar</li>
+<li>示例：缩写：font: 30px/2 “Consolas”, monospace;</li>
+</ul>
+<h3 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h3><h4 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h4><ul>
+<li>color: red/#ff0000/reg(255,0,0)/rgba(255,0,0,1)/transparent</li>
+<li>英文单词说明颜色，例如gray，red，yellow</li>
+<li>rgb颜色 #ff00ff 16进制数字分别表示rgb</li>
+<li>rgb颜色 rgb(255,255,0)   rgba(255,255,0,0.5)  透明度  1，表示不带a通道，不透明</li>
+<li>颜色值#ff0000也可以使用#f00缩写来表示</li>
+</ul>
+<h4 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h4><h5 id="水平对齐"><a href="#水平对齐" class="headerlink" title="水平对齐"></a>水平对齐</h5><p>text-align: left | right | center | justify（两端对齐）</p>
+<h5 id="垂直对齐"><a href="#垂直对齐" class="headerlink" title="垂直对齐"></a>垂直对齐</h5><p>vertical-align: baseline（默认值，基线） | sub（下标） | super（上标） | top（当前这一行的最高点） | text-top（文本的最高点） | middle（居中） | bottom（当前这一行的最低点） | text-bottom（文字的最低点） | &lt;percentage&gt;（相对于行高） | &lt;length&gt;（以baseline为起点，走..px）</p>
+<h5 id="缩进"><a href="#缩进" class="headerlink" title="缩进"></a>缩进</h5><ul>
+<li>text-indent: &lt;length&gt;|&lt;percentage&gt;（参照物为容器的宽度）</li>
+<li>如果text-indent设置一个负的极大值，则里面的文字将跑出容器，达到隐藏文字的目的，该手段也经常用，往往运用场景为：代码中需要，但是界面中不显示</li>
+</ul>
+<h5 id="空格、换行"><a href="#空格、换行" class="headerlink" title="空格、换行"></a>空格、换行</h5><ul>
+<li>white-space: normal | nowrap | pre | pre-wrap | pre-line  <center><img src="/images/空格换行.png" alt="空格换行"></center></li>
+<li>单词自动换行 word-wrap: normal | break-word</li>
+<li>任意两个字母间自动换行 word-break: normal | keep-all | break-all</li>
+</ul>
+<h5 id="间距"><a href="#间距" class="headerlink" title="间距"></a>间距</h5><ul>
+<li>word-spacing:30px 英文单词之间的间距</li>
+<li>letter-spacing:10px 字符和字符之间的间距</li>
+</ul>
+<h4 id="变形"><a href="#变形" class="headerlink" title="变形"></a>变形</h4><p>text-transfrom:uppercase(大写)\lowercase（小写）\capitalize（首字母大写） 变形</p>
+<h4 id="方向"><a href="#方向" class="headerlink" title="方向"></a>方向</h4><ul>
+<li>direction: ltr\rtl 文字书写方向</li>
+</ul>
+<h4 id="标注"><a href="#标注" class="headerlink" title="标注"></a>标注</h4><ul>
+<li>text-decoration: none | [ underline || overline || line-through ]</li>
+<li>underline(下划线） overline（上划线） line-through（中间划线，删除线） blink（闪烁，不是所有浏览器支持） 文字装饰(可组合)</li>
+</ul>
+<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><h4 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h4><ul>
+<li>text-shadow: none | [&lt;length&gt;{2,3} &amp;&amp; &lt;color&gt;?] #<ul>
+<li>1px 2px 表示x、y轴上的偏移</li>
+<li>第三个length表示模糊半径</li>
+<li>如果文字阴影中的颜色没有设置，那么阴影颜色就是文字颜色</li>
+<li>3px 5px 5px rgba(0,255,0,0.5) 给定四个值（可以为为负数），第一个：x方向上距离本体字延伸长度，第二个：y方向上延伸长度 第三个：模糊的范围 第四个：颜色  阴影，可以给定多个阴影实现霓虹灯的效果</li>
+</ul>
+</li>
+</ul>
+<h4 id="文本溢出"><a href="#文本溢出" class="headerlink" title="文本溢出"></a>文本溢出</h4><ul>
+<li>字省略… 样式： text-overflow: clip | ellipsis<ul>
+<li>示例：三个属性同时使用，第二个表示溢出的时候截断，然后nowrap进行不自动换行</li>
+<li>text-overflow:ellipsis; overflow: hidden; white-space: nowarp</li>
+<li>注意使用overflow时，元素需要为块级元素才能设置宽度，满足溢出效果</li>
+</ul>
+</li>
+</ul>
+<h4 id="光标"><a href="#光标" class="headerlink" title="光标"></a>光标</h4><p>cursor : [&lt;uri&gt;,]*（可以自定义图片） [auto | default（普通光标，普通鼠标形状） | none（消失） | help（问号） | pointer（手型） | zoom-in（放大镜） | zoom-out（缩小镜） | move（两边上下的箭头） ]</p>
+<h4 id="轮廓"><a href="#轮廓" class="headerlink" title="轮廓"></a>轮廓</h4><ul>
+<li>outline-color: red 轮廓效果</li>
+<li>outline-style: solid\doted\dashed\double\groove（三维凹槽）\ridge（三维凸槽）\inset（凹的边）\outset（凸的边） 线型</li>
+<li>outline-width: thin\10 粗细</li>
+</ul>
+<h3 id="强制继承的属性"><a href="#强制继承的属性" class="headerlink" title="强制继承的属性"></a>强制继承的属性</h3><center><img src="/images/强制继承的属性.png" alt="强制继承的属性"></center>
+
+<h2 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h2>
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/23/TODAY-OSC武汉源创会/" rel="next" title="TODAY-OSC武汉源创会">
+                <i class="fa fa-chevron-left"></i> TODAY-OSC武汉源创会
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/24/CSS总结/"
+           data-title="CSS总结" data-url="http://yoursite.com/2016/04/24/CSS总结/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="vivijind" />
+          <p class="site-author-name" itemprop="name">vivijind</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/vivijind" target="_blank" title="github">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-summary"><span class="nav-number">1.</span> <span class="nav-text">CSS summary</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS简介"><span class="nav-number">1.1.</span> <span class="nav-text">CSS简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS概述"><span class="nav-number">1.1.1.</span> <span class="nav-text">CSS概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引入方法"><span class="nav-number">1.1.2.</span> <span class="nav-text">引入方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">1.1.3.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器私有属性"><span class="nav-number">1.1.4.</span> <span class="nav-text">浏览器私有属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性值语法"><span class="nav-number">1.1.5.</span> <span class="nav-text">属性值语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#组合符号"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">组合符号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数量符号"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">数量符号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#规则语法"><span class="nav-number">1.1.5.3.</span> <span class="nav-text">@规则语法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS选择器"><span class="nav-number">1.2.</span> <span class="nav-text">CSS选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单选择器"><span class="nav-number">1.2.1.</span> <span class="nav-text">简单选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承"><span class="nav-number">1.2.2.</span> <span class="nav-text">继承</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS优先级"><span class="nav-number">1.3.</span> <span class="nav-text">CSS优先级</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#计算方法"><span class="nav-number">1.3.1.</span> <span class="nav-text">计算方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS层叠"><span class="nav-number">1.3.2.</span> <span class="nav-text">CSS层叠</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS改变优先级"><span class="nav-number">1.3.3.</span> <span class="nav-text">CSS改变优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#讨论区问题整理"><span class="nav-number">1.3.4.</span> <span class="nav-text">讨论区问题整理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#class-VS-ID"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">class VS ID</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css选择器使用"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">css选择器使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本"><span class="nav-number">1.4.</span> <span class="nav-text">文本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字体"><span class="nav-number">1.4.1.</span> <span class="nav-text">字体</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字体大小"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">字体大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字体类型"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">字体类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#粗体"><span class="nav-number">1.4.1.3.</span> <span class="nav-text">粗体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#斜体（字体风格）"><span class="nav-number">1.4.1.4.</span> <span class="nav-text">斜体（字体风格）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#行高"><span class="nav-number">1.4.1.5.</span> <span class="nav-text">行高</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小型大写字母的字体"><span class="nav-number">1.4.1.6.</span> <span class="nav-text">小型大写字母的字体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#font缩写"><span class="nav-number">1.4.1.7.</span> <span class="nav-text">font缩写</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#段落"><span class="nav-number">1.4.2.</span> <span class="nav-text">段落</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#颜色"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对齐"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">对齐</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#水平对齐"><span class="nav-number">1.4.2.2.1.</span> <span class="nav-text">水平对齐</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#垂直对齐"><span class="nav-number">1.4.2.2.2.</span> <span class="nav-text">垂直对齐</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#缩进"><span class="nav-number">1.4.2.2.3.</span> <span class="nav-text">缩进</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#空格、换行"><span class="nav-number">1.4.2.2.4.</span> <span class="nav-text">空格、换行</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#间距"><span class="nav-number">1.4.2.2.5.</span> <span class="nav-text">间距</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变形"><span class="nav-number">1.4.2.3.</span> <span class="nav-text">变形</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方向"><span class="nav-number">1.4.2.4.</span> <span class="nav-text">方向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标注"><span class="nav-number">1.4.2.5.</span> <span class="nav-text">标注</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果"><span class="nav-number">1.4.3.</span> <span class="nav-text">效果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#阴影"><span class="nav-number">1.4.3.1.</span> <span class="nav-text">阴影</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文本溢出"><span class="nav-number">1.4.3.2.</span> <span class="nav-text">文本溢出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#光标"><span class="nav-number">1.4.3.3.</span> <span class="nav-text">光标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#轮廓"><span class="nav-number">1.4.3.4.</span> <span class="nav-text">轮廓</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强制继承的属性"><span class="nav-number">1.4.4.</span> <span class="nav-text">强制继承的属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#盒模型"><span class="nav-number">1.5.</span> <span class="nav-text">盒模型</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">vivijind</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"vivijind"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("9SRis8xjurTM1rP8EufRzNH5-gzGzoHsz", "DUFsVoj94qARnbYTTdPC59pr");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
