@@ -86,16 +86,16 @@
 <meta property="og:url" content="http://yoursite.com/2016/04/19/CSS之清除浮动/index.html">
 <meta property="og:site_name" content="vivijind">
 <meta property="og:description" content="导读学习CSS有一小段时间了，在练习的时候经常碰到布局问题，特别是和浮动有关的。才考虑用浮动做布局时，常常碰到一些”不受控制”的问题，让布局的效果往往不在意料之内，这个时候需要清除浮动来解决问题。那么，什么是浮动呢？我们为什么需要清除浮动？怎么清除浮动？这里，试着把学习到的总结一下，让自己对浮动有一个较为系统话的理解。">
-<meta property="og:image" content="http://yoursite.com/../../../../images/float.png">
-<meta property="og:image" content="http://yoursite.com/../../../../images/float-demo.jpg">
-<meta property="og:image" content="http://yoursite.com/../../../../images/float_obscure.jpg">
-<meta property="og:image" content="http://yoursite.com/../../../../images/clear_self.png">
-<meta property="og:image" content="http://yoursite.com/../../../../images/solution1.png">
-<meta property="og:updated_time" content="2016-04-22T13:24:58.130Z">
+<meta property="og:image" content="http://yoursite.com/images/float.png">
+<meta property="og:image" content="http://yoursite.com/images/float-demo.jpg">
+<meta property="og:image" content="http://yoursite.com/images/float_obscure.jpg">
+<meta property="og:image" content="http://yoursite.com/images/clear_self.png">
+<meta property="og:image" content="http://yoursite.com/images/solution1.png">
+<meta property="og:updated_time" content="2016-04-26T14:43:59.277Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS之清除浮动">
 <meta name="twitter:description" content="导读学习CSS有一小段时间了，在练习的时候经常碰到布局问题，特别是和浮动有关的。才考虑用浮动做布局时，常常碰到一些”不受控制”的问题，让布局的效果往往不在意料之内，这个时候需要清除浮动来解决问题。那么，什么是浮动呢？我们为什么需要清除浮动？怎么清除浮动？这里，试着把学习到的总结一下，让自己对浮动有一个较为系统话的理解。">
-<meta name="twitter:image" content="http://yoursite.com/../../../../images/float.png">
+<meta name="twitter:image" content="http://yoursite.com/images/float.png">
 
 
 
@@ -305,15 +305,15 @@
 <hr>
 <p>浮动的框可以向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。<br>由于浮动框不在文档的普通流中，所以文档的普通流中的块框表现得就像浮动框不存在一样。</p>
 <hr>
-<center><img src="../../../../images/float.png" alt="float简介"></center>
+<center><img src="/images/float.png" alt="float简介"></center>
 
 </blockquote>
 <h2 id="为什么要清除浮动？"><a href="#为什么要清除浮动？" class="headerlink" title="为什么要清除浮动？"></a>为什么要清除浮动？</h2><p>浮动会让元素<a href="https://www.zhihu.com/question/24529373/answer/29135021" target="_blank" rel="external">脱离文档流</a>，不再影响不浮动的元素。实际上，它不是完全的脱离文档流，而是半脱离文档流（对元素，脱离文档流；对内容，在文档流），什么意思呢？见下图：</p>
-<center><img src="../../../../images/float-demo.jpg" alt="float-demo"></center>
+<center><img src="/images/float-demo.jpg" alt="float-demo"></center>
 
 <p>图中对于文字内容，并没有脱离文档流，float仅仅是对元素有影响。也就是说，如果浮动的元素后面有一个文档流中的元素，那么这个元素的框会表现的像浮动根本不存在一样，但是框内的文本会受浮动元素的影响，会移动以流出空间。用技术术语来说，浮动元素旁边的行框被缩短，从而给浮动元素留出空间，因此行框围绕浮动框。这种方法通常适用于文本环绕图像。</p>
 <p>这种运用可以很好的得到文本环绕的效果，但是当浮动元素的高度大于旁边一个框的高度，而影响到另外一个框时，这往往不是我们要的效果，如下图：</p>
-<center><img src="../../../../images/float_obscure.jpg" alt="float_obscure"></center>
+<center><img src="/images/float_obscure.jpg" alt="float_obscure"></center>
 
 <p>使用浮动可能导致的问题有：</p>
 <ol>
@@ -337,11 +337,11 @@ right  :  不允许右边有浮动对象
 both  :  不允许有浮动对象&apos;    
 </code></pre><hr>
 <p>需要注意的是，<strong>clear属性仅仅会影响使用元素的本身，而不会对其他元素造成影响。</strong><br>如下图所示：</p>
-<center><img src="../../../../images/clear_self.png" alt="clear仅影响其本身"></center>
+<center><img src="/images/clear_self.png" alt="clear仅影响其本身"></center>
 
 <p>总而言之，浮动元素脱离了文本流，不影响周围元素，清除浮动实际上为前面的浮动元素留出了垂直空间。</p>
 <h2 id="怎么清除浮动？"><a href="#怎么清除浮动？" class="headerlink" title="怎么清除浮动？"></a>怎么清除浮动？</h2><h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><p>在最后一个段落下面添加一个空元素并清理它，这样可以迫使容器元素包围浮动元素。</p>
-<center><img src="../../../../images/solution1.png" alt="方法一示例"></center>
+<center><img src="/images/solution1.png" alt="方法一示例"></center>
 
 <pre><code>.news {
   background-color: gray;
@@ -523,7 +523,7 @@ both  :  不允许有浮动对象&apos;
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -533,7 +533,7 @@ both  :  不允许有浮动对象&apos;
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
