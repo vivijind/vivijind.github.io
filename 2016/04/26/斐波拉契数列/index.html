@@ -88,7 +88,7 @@ fn = fn-1 + fn-2">
 <meta property="og:site_name" content="vivijind">
 <meta property="og:description" content="斐波拉契数列斐波那契数列（Fibonacci Sequence）由 0 和 1 开始，之后的斐波那契数就由之前的两数相加。在数学上，斐波那契数列是以递归的方法来定义的
 fn = fn-1 + fn-2">
-<meta property="og:updated_time" content="2016-04-26T14:34:39.959Z">
+<meta property="og:updated_time" content="2016-04-26T14:56:54.006Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="斐波拉契数列">
 <meta name="twitter:description" content="斐波拉契数列斐波那契数列（Fibonacci Sequence）由 0 和 1 开始，之后的斐波那契数就由之前的两数相加。在数学上，斐波那契数列是以递归的方法来定义的
@@ -299,87 +299,11 @@ fn = fn-1 + fn-2">
         <h2 id="斐波拉契数列"><a href="#斐波拉契数列" class="headerlink" title="斐波拉契数列"></a>斐波拉契数列</h2><p>斐波那契数列（Fibonacci Sequence）由 0 和 1 开始，之后的斐波那契数就由之前的两数相加。在数学上，斐波那契数列是以递归的方法来定义的</p>
 <pre><code>fn = fn-1 + fn-2
 </code></pre><a id="more"></a>
-<h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><h3 id="方法一：递归方法"><a href="#方法一：递归方法" class="headerlink" title="方法一：递归方法"></a>方法一：递归方法</h3><pre><code>// 时间复杂度为O(2^n)
-function fibonacci(n){
-    if (n &lt; 0) {
-        throw new  Error (&apos;数字不允许是负数&apos;);
-    }
-    else{
-        return ( n === 0 || n===1 ) ? n : (arguments.callee( n-1 ) + arguments.callee( n-2 ));
-    }
-}
-</code></pre><h3 id="方法二：非递归方法"><a href="#方法二：非递归方法" class="headerlink" title="方法二：非递归方法"></a>方法二：非递归方法</h3><pre><code>// 时间复杂度为O(n)
-function fibonacci(n){
-    var a,b,res = 0;
-    a = b = 1;
-    for(var i=3;i&lt;=n;i++){
-        res = a + b;
-        a = b;
-        b = res;
-    }
-    return res;
-}
-</code></pre><h3 id="方法三：性能优化：用一个数组将已经计算过的值存起来，并结合闭包进行封装"><a href="#方法三：性能优化：用一个数组将已经计算过的值存起来，并结合闭包进行封装" class="headerlink" title="方法三：性能优化：用一个数组将已经计算过的值存起来，并结合闭包进行封装"></a>方法三：性能优化：用一个数组将已经计算过的值存起来，并结合闭包进行封装</h3><pre><code>// 该方法在多次计算时性能有优化
-var fibonacci = (function () {
-  var arr = [];//这个数组模拟的就是斐波拉契数列
-  var count;
-  return function (n) {
-    count++;
-    if (n &lt; 0) throw new  Error (&apos;数字不允许是负数&apos;);
-    var res  = arr[n];//先到数组中去取,如果有把这个数值返回,没有加进去
-    if (res != undefined){
-      //判断数组中有数据,有就返回,没有就递归
-      return res;
-    } else {
-        //如果是1或0就将n返回给res
-        //否则递归结果交给res;
-        if(n===0 || n===1) {
-            res = n;
-        } else {
-            res = arguments.callee(n-1) +
-                arguments.callee(n-2);
-        }
-        //将计算的结果放到数组中,那么下一次在计算的时候直接拿来用,就不用重新计算了
-        //这里使用键值对做缓存,取的时候是取出来n,返回也是给n
-        arr[n] = res;
-        return res;
-    }
-  }
-})();
-</code></pre><h3 id="方法四：性能优化，但是不结合闭包"><a href="#方法四：性能优化，但是不结合闭包" class="headerlink" title="方法四：性能优化，但是不结合闭包"></a>方法四：性能优化，但是不结合闭包</h3><pre><code>// 把闭包去掉了,用函数名存储数据
-// 缺点:这个函数名谁都可以访问,谁都可以修改这个数据
-var fibonacci = function (n) {
-    if (n &lt; 0) throw new  Error (&apos;数字不允许是负数&apos;);
-    var res = fibonacci[n];//先到函数名中取
-    if (res != undefined){
-      //函数名中有数据
-      return res;
-    } else {
-      if(n===0 || n===1) {
-        res = n;
-      } else {
-         res = arguments.callee(n-1) +
-                arguments.callee(n-2);
-      }
-       fibonacci[n] = res;
-       fibonacci.len++;//也可以用slice
-        return res;
-
-    }
-};
-</code></pre><h3 id="test"><a href="#test" class="headerlink" title="test"></a>test</h3><pre><code>var num = fibonacci(0);
-console.log(num);
-var num = fibonacci(1);
-console.log(num);
-var num = fibonacci(2);
-console.log(num);
-var num = fibonacci(3);
-console.log(num);
-var num = fibonacci(4);
-console.log(num);
-var num = fibonacci(5);
-console.log(num);
-</code></pre>
+<h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><h3 id="方法一：递归方法"><a href="#方法一：递归方法" class="headerlink" title="方法一：递归方法"></a>方法一：递归方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 时间复杂度为O(2^n)</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fibonacci</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span>  <span class="built_in">Error</span> (<span class="string">'数字不允许是负数'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ( n === <span class="number">0</span> || n===<span class="number">1</span> ) ? n : (<span class="built_in">arguments</span>.callee( n<span class="number">-1</span> ) + <span class="built_in">arguments</span>.callee( n<span class="number">-2</span> ));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="方法二：非递归方法"><a href="#方法二：非递归方法" class="headerlink" title="方法二：非递归方法"></a>方法二：非递归方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 时间复杂度为O(n)</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fibonacci</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a,b,res = <span class="number">0</span>;</span><br><span class="line">    a = b = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">3</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        res = a + b;</span><br><span class="line">        a = b;</span><br><span class="line">        b = res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="方法三：性能优化：用一个数组将已经计算过的值存起来，并结合闭包进行封装"><a href="#方法三：性能优化：用一个数组将已经计算过的值存起来，并结合闭包进行封装" class="headerlink" title="方法三：性能优化：用一个数组将已经计算过的值存起来，并结合闭包进行封装"></a>方法三：性能优化：用一个数组将已经计算过的值存起来，并结合闭包进行封装</h3> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 该方法在多次计算时性能有优化</span></span><br><span class="line"><span class="keyword">var</span> fibonacci = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> arr = [];<span class="comment">//这个数组模拟的就是斐波拉契数列</span></span><br><span class="line">  <span class="keyword">var</span> count;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">n</span>) </span>&#123;</span><br><span class="line">    count++;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; <span class="number">0</span>) <span class="keyword">throw</span> <span class="keyword">new</span>  <span class="built_in">Error</span> (<span class="string">'数字不允许是负数'</span>);</span><br><span class="line">    <span class="keyword">var</span> res  = arr[n];<span class="comment">//先到数组中去取,如果有把这个数值返回,没有加进去</span></span><br><span class="line">    <span class="keyword">if</span> (res != <span class="literal">undefined</span>)&#123;</span><br><span class="line">      <span class="comment">//判断数组中有数据,有就返回,没有就递归</span></span><br><span class="line">      <span class="keyword">return</span> res;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">//如果是1或0就将n返回给res</span></span><br><span class="line">        <span class="comment">//否则递归结果交给res;</span></span><br><span class="line">        <span class="keyword">if</span>(n===<span class="number">0</span> || n===<span class="number">1</span>) &#123;</span><br><span class="line">            res = n;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            res = <span class="built_in">arguments</span>.callee(n<span class="number">-1</span>) +</span><br><span class="line">                <span class="built_in">arguments</span>.callee(n<span class="number">-2</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//将计算的结果放到数组中,那么下一次在计算的时候直接拿来用,就不用重新计算了</span></span><br><span class="line">        <span class="comment">//这里使用键值对做缓存,取的时候是取出来n,返回也是给n</span></span><br><span class="line">        arr[n] = res;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<h3 id="方法四：性能优化，但是不结合闭包"><a href="#方法四：性能优化，但是不结合闭包" class="headerlink" title="方法四：性能优化，但是不结合闭包"></a>方法四：性能优化，但是不结合闭包</h3> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 把闭包去掉了,用函数名存储数据</span></span><br><span class="line"><span class="comment">// 缺点:这个函数名谁都可以访问,谁都可以修改这个数据</span></span><br><span class="line"><span class="keyword">var</span> fibonacci = <span class="function"><span class="keyword">function</span> (<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; <span class="number">0</span>) <span class="keyword">throw</span> <span class="keyword">new</span>  <span class="built_in">Error</span> (<span class="string">'数字不允许是负数'</span>);</span><br><span class="line">    <span class="keyword">var</span> res = fibonacci[n];<span class="comment">//先到函数名中取</span></span><br><span class="line">    <span class="keyword">if</span> (res != <span class="literal">undefined</span>)&#123;</span><br><span class="line">      <span class="comment">//函数名中有数据</span></span><br><span class="line">      <span class="keyword">return</span> res;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">if</span>(n===<span class="number">0</span> || n===<span class="number">1</span>) &#123;</span><br><span class="line">        res = n;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">         res = <span class="built_in">arguments</span>.callee(n<span class="number">-1</span>) +</span><br><span class="line">                <span class="built_in">arguments</span>.callee(n<span class="number">-2</span>);</span><br><span class="line">      &#125;</span><br><span class="line">       fibonacci[n] = res;</span><br><span class="line">       fibonacci.len++;<span class="comment">//也可以用slice</span></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="test"><a href="#test" class="headerlink" title="test"></a>test</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = fibonacci(<span class="number">0</span>);</span><br><span class="line"><span class="built_in">console</span>.log(num);</span><br><span class="line"><span class="keyword">var</span> num = fibonacci(<span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(num);</span><br><span class="line"><span class="keyword">var</span> num = fibonacci(<span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(num);</span><br><span class="line"><span class="keyword">var</span> num = fibonacci(<span class="number">3</span>);</span><br><span class="line"><span class="built_in">console</span>.log(num);</span><br><span class="line"><span class="keyword">var</span> num = fibonacci(<span class="number">4</span>);</span><br><span class="line"><span class="built_in">console</span>.log(num);</span><br><span class="line"><span class="keyword">var</span> num = fibonacci(<span class="number">5</span>);</span><br><span class="line"><span class="built_in">console</span>.log(num);</span><br></pre></td></tr></table></figure>
       
     </div>
     
