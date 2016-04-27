@@ -1,0 +1,743 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSS,布局," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="三栏式布局最近在做百度前端技术学院的题，发现自己对CSS熟悉度还不够，还有很多的坑没有踩。三栏式布局是百度前端技术学院的Task2，在此就以这个为引出，基本实现根据此任务，来说说三栏式布局的实现方法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="纯CSS的三栏式布局">
+<meta property="og:url" content="http://yoursite.com/2016/04/27/纯CSS的三栏式布局/index.html">
+<meta property="og:site_name" content="vivijind">
+<meta property="og:description" content="三栏式布局最近在做百度前端技术学院的题，发现自己对CSS熟悉度还不够，还有很多的坑没有踩。三栏式布局是百度前端技术学院的Task2，在此就以这个为引出，基本实现根据此任务，来说说三栏式布局的实现方法。">
+<meta property="og:updated_time" content="2016-04-27T14:33:47.590Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="纯CSS的三栏式布局">
+<meta name="twitter:description" content="三栏式布局最近在做百度前端技术学院的题，发现自己对CSS熟悉度还不够，还有很多的坑没有踩。三栏式布局是百度前端技术学院的Task2，在此就以这个为引出，基本实现根据此任务，来说说三栏式布局的实现方法。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '邓瑾'
+    }
+  };
+</script>
+
+  <title> 纯CSS的三栏式布局 | vivijind </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">vivijind</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                纯CSS的三栏式布局
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-27T22:14:31+08:00" content="2016-04-27">
+              2016-04-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/TO前端/" itemprop="url" rel="index">
+                    <span itemprop="name">TO前端</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/27/纯CSS的三栏式布局/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/27/纯CSS的三栏式布局/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/04/27/纯CSS的三栏式布局/" class="leancloud_visitors" data-flag-title="纯CSS的三栏式布局">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="三栏式布局"><a href="#三栏式布局" class="headerlink" title="三栏式布局"></a>三栏式布局</h2><p>最近在做百度前端技术学院的题，发现自己对CSS熟悉度还不够，还有很多的坑没有踩。<br>三栏式布局是百度前端技术学院的Task2，在此就以这个为引出，基本实现根据此任务，来说说三栏式布局的实现方法。</p>
+<a id="more"></a>
+<h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><h3 id="方法一：float"><a href="#方法一：float" class="headerlink" title="方法一：float"></a>方法一：float</h3><h4 id="方法思想"><a href="#方法思想" class="headerlink" title="方法思想"></a>方法思想</h4><p>使用浮动可以让元素脱离文档流，实现布局和定位。<br>实现的思想很简单，就是左边元素左浮动，右边元素右浮动，中间使用margin，设置marginleft和right来实现自适应。</p>
+<h4 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h4><p>实现效果见<a href="./task3-float.html">demo</a></p>
+<h4 id="踩过的坑"><a href="#踩过的坑" class="headerlink" title="踩过的坑"></a>踩过的坑</h4><h5 id="三栏的顺序"><a href="#三栏的顺序" class="headerlink" title="三栏的顺序"></a>三栏的顺序</h5><p>三个元素的顺序的关键是要把中间div放在最后，左右栏div顺序随意。<br>为什么呢？<br>这个就看我们对float的理解了。<br>元素在浮动时，是相对浮动的，它虽然会脱离它当前所在的文档流，但是会根据它前面元素的位置来决定浮动的位置。也就是说，它的浮动的上面位置是和它前一个原来在标准流中的元素底部对应，而不是包裹它的外面的元素。<br>这部分具体的理解可以看<a href="http://www.cnblogs.com/zhongxinWang/archive/2013/03/27/2984764.html" target="_blank" rel="external">css浮动</a></p>
+<blockquote>
+<p>假如某个div元素A是浮动的，如果A元素上一个元素也是浮动的，那么A元素会跟随在上一个元素的后边(如果一行放不下这两个元素，那么A元素会被挤到下一行)；如果A元素上一个元素是标准流中的元素，那么A的相对垂直位置不会改变，也就是说A的顶部总是和上一个元素的底部对齐。</p>
+</blockquote>
+<p>回到我们当前的demo，如果我们把中间的div放置在了左右两栏的中间，那么最后一个元素在浮动的时候，会浮动在中间div的下面（不管它是左浮动还是右浮动），因为最后一个元素它的浮动的位置是它在标准流中间前一个元素（即中间div）的底部。这样永远也达不到我们要的效果。<br>ps：表示自己最初对float理解不透彻，把自己坑惨了。</p>
+<h5 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h5><p>这个坑大家都应该了解的比较多了，唯一需要注意的就是<strong>对于CSS的清除浮动(clear)，一定要牢记：这个规则只能影响使用清除的元素本身，不能影响其他元素。</strong><br>所以我们通常采用给外层div加上一个after选择器，增加一个元素让它清除浮动来使得外层div撑开。<br>通过这样的方式能满足：改变中间一栏的内容长度，以确保在中间一栏较高和右边一栏较高时，父元素的高度始终为子元素中最高的高度。<br>噢，不要忘记了，清除浮动还需要照顾一下浏览器的兼容性，使用zoom触发bfc就好啦！</p>
+<h3 id="方法二：position"><a href="#方法二：position" class="headerlink" title="方法二：position"></a>方法二：position</h3><h4 id="方法思想-1"><a href="#方法思想-1" class="headerlink" title="方法思想"></a>方法思想</h4><p>使用绝对定位和相对定位来构建三栏式布局在横向上可以很好的满足要求。思想就是通过给外层的div设置相对定位，然后内层的左和右边的两栏设置绝对定位（相对于外层div的绝对定位），然后中间用margin设定位置，这样可以实现三栏布局。</p>
+<h4 id="demo-1"><a href="#demo-1" class="headerlink" title="demo"></a>demo</h4><p>实现效果见<a href="./task3-position.html">demo</a><br>注意这里三栏元素先后顺序不影响布局。</p>
+<h4 id="踩过的坑-1"><a href="#踩过的坑-1" class="headerlink" title="踩过的坑"></a>踩过的坑</h4><h5 id="高度适应问题"><a href="#高度适应问题" class="headerlink" title="高度适应问题"></a>高度适应问题</h5><p>使用position最大的问题就是高度上的适应，使用absolute属性会导致高度上的坍塌，也就是说，给左右两栏设置absolute后，外层div的高度和这两个绝对定位的元素已经没关系了，如果要实现高度适应的效果，提供一个min-height是最好的解决方法。<br>关于相对、绝对定位存在的问题和详细解释见<a href="http://www.zhangxinxu.com/wordpress/2010/12/css-%E7%9B%B8%E5%AF%B9%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D%E7%B3%BB%E5%88%97%EF%BC%88%E4%B8%80%EF%BC%89/" target="_blank" rel="external">CSS 相对|绝对(relative/absolute)定位系列</a><br><strong>一般我们不使用position来对页面内部的元素进行具体的布局，这样容易导致问题且扩展性低。position一般适合做整个页面上固定位置的东西，尽管有相对定位下的绝对定位，但是也不要忘记它导致的高度坍塌问题。</strong></p>
+<h3 id="方法三：margin"><a href="#方法三：margin" class="headerlink" title="方法三：margin"></a>方法三：margin</h3><h4 id="方法思想-2"><a href="#方法思想-2" class="headerlink" title="方法思想"></a>方法思想</h4><p>margin方法在实际中用的还比较多。这种方法通过把所有元素浮动，然后通过改变浮动的位置来实现。需要注意的就是要把中间的内容区域放在最前面，使用双层标签，外层div宽度100%显示，并且浮动浮动（给的demo为左浮动，下面所述依次为基础），内层div为真正的主体内容，然后定义其margin值，外层的边框隐藏，为none，给内层设定边框。左栏与右栏都是采用margin负值定位的，左栏左浮动，margin-left为-100%，由于前面的div宽度100%与浏览器，所以这里的-100%margin值正好使左栏div定位到了页面的左侧；右侧栏也是左浮动，其margin-left也是负值，大小为其本身的宽度。</p>
+<h4 id="demo-2"><a href="#demo-2" class="headerlink" title="demo"></a>demo</h4><p>实现效果见<a href="./task3-margin.html">demo</a><br>注意三栏元素的顺序，中间在前即可。</p>
+<h4 id="踩过的坑-2"><a href="#踩过的坑-2" class="headerlink" title="踩过的坑"></a>踩过的坑</h4><h5 id="顺序问题"><a href="#顺序问题" class="headerlink" title="顺序问题"></a>顺序问题</h5><p>最大的坑就是顺序问题啦，这个需要好好的把这个方法的思想理解。然后过多的margin定位导致的位置也不一样，还需要注意负margin的时候要考虑border的宽度对它的影响。<br>这种方法比较实用，但是就是理解比较困难，上手难一点，然后出问题了不好找bug啊~！</p>
+<h5 id="自适应宽度问题"><a href="#自适应宽度问题" class="headerlink" title="自适应宽度问题"></a>自适应宽度问题</h5><p>还有一个坑就是宽度自适应的问题，当把浏览器调小，设定元素的min-width的时候一定要注意是中间的min-width加上左右固定好后的width，不然就出现右侧的和中间的内容叠加啦！</p>
+<h3 id="方法四——flex"><a href="#方法四——flex" class="headerlink" title="方法四——flex"></a>方法四——flex</h3><h4 id="中心思想"><a href="#中心思想" class="headerlink" title="中心思想"></a>中心思想</h4><p>使用弹性布局的方法来实现，通过指定中间内容分配全部的剩余空间来获得自适应的宽度。通过flex-basis就能满足我们需要的min-width功能啦。那自适应高度怎么弄呢？解决margin的方法，给所有的元素增加双层标签，外标签高度不管，边框隐藏，然后给内标签设置定位就好了，外标签的主要作用就是用来分配横向的剩余空间的。因为flex分配剩余空间后，如果不指定height值，它会默认是外层div的高度，也就是最大的那个高度，这个肯定不是我们想要的。设置双层标签可以满足内层边框高度是自适应的。</p>
+<h4 id="demo-3"><a href="#demo-3" class="headerlink" title="demo"></a>demo</h4><p>实现效果见<a href="./task3-flex.html">demo</a>。</p>
+<h4 id="踩过的坑-3"><a href="#踩过的坑-3" class="headerlink" title="踩过的坑"></a>踩过的坑</h4><h5 id="高度自适应问题"><a href="#高度自适应问题" class="headerlink" title="高度自适应问题"></a>高度自适应问题</h5><p>最大的坑就是高度的适应问题。一般我们需要元素的边框高度就是他自己的内容高度，但是我们发现用flex后，它的高度变成了整个div的高度。通过双层标签，把外面的高度隐藏，内层边框的就是自适应的啦~！</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>纯CSS实现三栏式布局的方法有这么多（可能还有遗漏的），一般我们比较常用的就是float和margin两个方法，float保证浮动的清除就可以很好的解决问题，margin呢就是比较难以理解，理解了以后也是很好用的。<br>学习最快的接收方式就是实践，多试试就知道解决办法了~！<br>不过关于各种方法的优缺点上理解还需要更为深入，等学到后面再多多了解。</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
+          
+            <a href="/tags/布局/" rel="tag">#布局</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/27/平日里的小demo/" rel="next" title="平日里的小demo">
+                <i class="fa fa-chevron-left"></i> 平日里的小demo
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/27/纯CSS的三栏式布局/"
+           data-title="纯CSS的三栏式布局" data-url="http://yoursite.com/2016/04/27/纯CSS的三栏式布局/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="vivijind" />
+          <p class="site-author-name" itemprop="name">vivijind</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/vivijind" target="_blank" title="github">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#三栏式布局"><span class="nav-number">1.</span> <span class="nav-text">三栏式布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现方法"><span class="nav-number">2.</span> <span class="nav-text">实现方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一：float"><span class="nav-number">2.1.</span> <span class="nav-text">方法一：float</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法思想"><span class="nav-number">2.1.1.</span> <span class="nav-text">方法思想</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#demo"><span class="nav-number">2.1.2.</span> <span class="nav-text">demo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#踩过的坑"><span class="nav-number">2.1.3.</span> <span class="nav-text">踩过的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#三栏的顺序"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">三栏的顺序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清除浮动"><span class="nav-number">2.1.3.2.</span> <span class="nav-text">清除浮动</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二：position"><span class="nav-number">2.2.</span> <span class="nav-text">方法二：position</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法思想-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">方法思想</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#demo-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">demo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#踩过的坑-1"><span class="nav-number">2.2.3.</span> <span class="nav-text">踩过的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#高度适应问题"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">高度适应问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法三：margin"><span class="nav-number">2.3.</span> <span class="nav-text">方法三：margin</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法思想-2"><span class="nav-number">2.3.1.</span> <span class="nav-text">方法思想</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#demo-2"><span class="nav-number">2.3.2.</span> <span class="nav-text">demo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#踩过的坑-2"><span class="nav-number">2.3.3.</span> <span class="nav-text">踩过的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#顺序问题"><span class="nav-number">2.3.3.1.</span> <span class="nav-text">顺序问题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#自适应宽度问题"><span class="nav-number">2.3.3.2.</span> <span class="nav-text">自适应宽度问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法四——flex"><span class="nav-number">2.4.</span> <span class="nav-text">方法四——flex</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#中心思想"><span class="nav-number">2.4.1.</span> <span class="nav-text">中心思想</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#demo-3"><span class="nav-number">2.4.2.</span> <span class="nav-text">demo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#踩过的坑-3"><span class="nav-number">2.4.3.</span> <span class="nav-text">踩过的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#高度自适应问题"><span class="nav-number">2.4.3.1.</span> <span class="nav-text">高度自适应问题</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">vivijind</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"vivijind"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("9SRis8xjurTM1rP8EufRzNH5-gzGzoHsz", "DUFsVoj94qARnbYTTdPC59pr");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
