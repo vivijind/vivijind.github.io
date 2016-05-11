@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>任意级级联选择器</title>
+    <meta charset="utf-8"/>
+    <style>
+      .demo select{width:200px;margin-right:10px;}
+    </style>
+    <script>
+        function addEvent(node,event,handler){
+            if (!!node.addEventListener){
+                node.addEventListener(event,handler,!1);
+            }else{
+                node.attachEvent('on'+event,handler);
+            }
+        }
+        function getTarget(event){
+             return event.target || event.srcElement;
+         }
+    </script>
+  </head>
+  <body>
+    <form class="demo" name="demoForm">
+      <select name="第一级">
+        <option>请选择级目录</option>
+      </select>
+      <select name="第二级">
+        <option>请选择级目录</option>
+      </select>
+      <select name="第三级">
+        <option>请选择级目录</option>
+      </select>
+      <select name="第四级">
+        <option>请选择级目录</option>
+      </select>
+    </form>
+    <script>
+        // 数据定义
+        var cascadeDate = [
+            {
+                text:'第一级',
+                value:'1',
+                list:[
+                    {
+                        text:'第二级',
+                        value:'1.1',
+                        list:[
+                            {
+                                text:'第三级',
+                                value:'1.1.1',
+                                list:[
+                                    {
+                                        text:'第四级',
+                                        value:'1.1.1.1',
+                                        list:[]
+                                    }
+                                ]
+                            },
+                            {
+                                text:'第三级',
+                                value:'1.1.2',
+                                list:[
+                                    {
+                                        text:'第四级',
+                                        value:'1.1.2.1',
+                                        list:[]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        text:'第二级',
+                        value:'1.2',
+                        list:[
+                            {
+                                text:'第三级',
+                                value:'1.2.1',
+                                list:[
+                                    {
+                                        text:'第四级',
+                                        value:'1.2.1.1',
+                                        list:[]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                text:'第一级',
+                value:'2',
+                list:[
+                    {
+                        text:'第二级',
+                        value:'2.1',
+                        list:[
+                            {
+                                text:'第三级',
+                                value:'2.1.1',
+                                list:[
+                                    {
+                                        text:'第四级',
+                                        value:'2.1.1.1',
+                                        list:[]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        text:'第二级',
+                        value:'2.2',
+                        list:[
+                            {
+                                text:'第三级',
+                                value:'2.2.1',
+                                list:[
+                                    {
+                                        text:'第四级',
+                                        value:'2.2.1.1',
+                                        list:[]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                text:'第一级',
+                value:'3',
+                list:[
+                    {
+                        text:'第二级',
+                        value:'3.1',
+                        list:[
+                            {
+                                text:'第三级',
+                                value:'3.1.1',
+                                list:[
+                                    {
+                                        text:'第四级',
+                                        value:'3.1.1.1',
+                                        list:[]
+                                    }
+                                ]
+                            },
+                            {
+                                text:'第三级',
+                                value:'3.1.2',
+                                list:[
+                                    {
+                                        text:'第四级',
+                                        value:'3.1.2.1',
+                                        list:[]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        text:'第二级',
+                        value:'3.2',
+                        list:[
+                            {
+                                text:'第三级',
+                                value:'3.2.1',
+                                list:[
+                                    {
+                                        text:'第四级',
+                                        value:'3.2.1.1',
+                                        list:[]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ];
+
+        // 填充选择器
+        function fillSelect(select,list){
+            for(var i=select.length-1;i>0;i--){
+                select.remove(i);
+            }
+
+            for(var i=0,l=list.length,data;i<l;i++){
+                data = list[i];
+                var option = new Option(
+                    data.value,data.text
+                ); 
+                select.add(option); 
+            }
+        }
+
+        
+        function cascade(selectList,data){
+            // 这里selectList为依次级联的选择器元素列表，如[select1,select2,select3,...]
+            if (data.length === 0) {
+                return;
+            }
+
+            for (var j=0, select; select = selectList[j]; j++) {
+                addEvent(select, 'change', function(event){
+                    // 获取当前选择的选择器
+                    var target = getTarget(event);
+                    var datanew = data;
+                    var isFill = false, selectID = -1;
+                    for(var i=0, selectTemp; selectTemp = selectList[i]; i++){
+                        // 获取下一级的数据，由于selectList是动态的，会随着点击而改变，所以可以通过循环获取到下一级选择的数据
+                        if (!isFill) {
+                            selectID = selectTemp.selectedIndex-1;
+                            datanew = selectID>=0? datanew[selectID].list : [];
+                            if (selectTemp == target) {
+                                isFill = true;
+                                continue;
+                            }
+                        }
+                        if (isFill) {
+                            // 下一级填充
+                            fillSelect(selectTemp,datanew);
+                            selectID = selectTemp.selectedIndex-1;
+                            datanew = selectID>=0? datanew[selectID].list : [];
+                        }                   
+                    }
+                });
+            }
+        }
+
+        // 初始化
+        var demoForm = document.forms.demoForm.elements;
+        fillSelect(demoForm[0],cascadeDate);
+        cascade(demoForm,cascadeDate);
+    </script>
+  </body>
+</html>
